@@ -1,2 +1,3 @@
 - [] Finish tailwind config
 - [] check spa using vanilla js
+- [] generate a favicon
