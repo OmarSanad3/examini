@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Icons -->
+    <link href="../css/all.min.css" rel="stylesheet" />
+
+    <!-- Tailwind File -->
+    <link href="../css/output.css" rel="stylesheet" />
+
+    <!-- Page Title -->
+    <title>Examini</title>
+  </head>
+
+  <body>
+    <main>
+      <section
+        class="flex justify-center items-center bg-linear-to-br from-purple-50 dark:from-gray-900 to-pink-100 dark:to-gray-800 p-4 min-h-screen transition-colors duration-300"
+      >
+        <div class="bg-white shadow-2xl p-8 rounded-2xl w-full max-w-lg">
+          <span
+            class="flex justify-center items-center bg-linear-to-br from-purple-500 to-pink-600 mx-auto mb-6 rounded-full w-20 h-20 text-white"
+          >
+            <i class="fa-right-to-bracket fa-solid fa-2xl"></i>
+          </span>
+          <h1
+            class="mb-8 text-gray-800 dark:text-white md:text-2xl text-center transition-colors duration-300"
+          >
+            Login
+          </h1>
+          <form class="flex flex-col space-y-5">
+            <label class="flex flex-col gap-2" for="email">
+              Email Address
+              <input
+                class="bg-white dark:bg-gray-700 px-4 py-3 border border-gray-300 focus:border-transparent dark:border-gray-600 rounded-lg outline-0 focus:ring-2 focus:ring-purple-500 text-gray-900 dark:text-white transition-all duration-300 focus:caret-purple-500"
+                type="email"
+                name="email"
+                id="email"
+              />
+            </label>
+            <label class="flex flex-col gap-2" for="password">
+              Password
+              <input
+                class="bg-white dark:bg-gray-700 px-4 py-3 border border-gray-300 focus:border-transparent dark:border-gray-600 rounded-lg outline-0 focus:ring-2 focus:ring-purple-500 text-gray-900 dark:text-white transition-all duration-300 focus:caret-purple-500"
+                type="password"
+                name="password"
+                id="password"
+              />
+            </label>
+
+            <button
+              class="bg-linear-to-r from-purple-500 hover:from-purple-600 to-pink-600 hover:to-pink-700 py-3 focus:border-transparent rounded-lg outline-0 focus:ring-2 focus:ring-purple-600 text-white transition-all duration-300 cursor-pointer"
+            >
+              Sign In
+            </button>
+          </form>
+          <div class="mt-6 text-gray-600 dark:text-gray-400 text-center">
+            <p>
+              Don't have an account?
+              <a
+                class="outline-0 focus:ring-2 focus:ring-purple-600 font-medium text-purple-500 hover:text-purple-600 transition-colors duration-300 cursor-pointer"
+                href="../sing-up.html"
+                >Sign Up</a
+              >
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
