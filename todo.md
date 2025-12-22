@@ -1,3 +1,5 @@
 - [] Finish tailwind config
 - [] check spa using vanilla js
 - [] generate a favicon
+- [] fix login colors
+- [] fix dark mode for sign-up and sign-in
