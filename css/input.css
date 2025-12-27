@@ -1,1 +1,29 @@
 @import "tailwindcss";
+
+.swal-icon--warning {
+  @apply bg-red-200 border-red-700 animate-none;
+}
+.swal-icon--warning__body,
+.swal-icon--warning__dot {
+  @apply bg-red-700;
+}
+
+.swal-button.swal-button--confirm.swal-button--danger {
+  @apply bg-red-700 focus:shadow-none focus:outline-2 focus:outline-red-600;
+}
+.swal-button.swal-button--confirm.swal-button--danger:not([disabled]):hover {
+  @apply bg-red-400;
+}
+
+.swal-icon--success__line {
+  @apply bg-green-500;
+}
+.swal-icon--success__ring {
+  @apply border-green-500;
+}
+.swal-button.swal-button--confirm {
+  @apply bg-green-500 focus:shadow-none focus:outline-2 focus:outline-green-600;
+}
+.swal-button.swal-button--confirm:not([disabled]):hover {
+  @apply bg-green-400;
+}
