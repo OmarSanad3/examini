@@ -47,7 +47,7 @@
               >
                 First Name
                 <input
-                  class="bg-white dark:bg-gray-700 px-4 py-3 border border-gray-300 focus:border-transparent dark:border-gray-600 rounded-lg outline-0 focus:ring-2 focus:ring-blue-500 text-gray-900 dark:text-white transition-all duration-300 focus:caret-blue-500 focus:dark:caret-white"
+                  class="bg-white dark:bg-gray-700 px-4 py-3 border border-gray-300 focus:border-transparent dark:border-gray-600 rounded-lg outline-0 focus:ring-2 focus:ring-blue-500 w-full text-gray-900 dark:text-white transition-all duration-300 focus:caret-blue-500 focus:dark:caret-white"
                   type="text"
                   name="first-name"
                   id="first-name"
@@ -64,7 +64,7 @@
               >
                 Last Name
                 <input
-                  class="bg-white dark:bg-gray-700 px-4 py-3 border border-gray-300 focus:border-transparent dark:border-gray-600 rounded-lg outline-0 focus:ring-2 focus:ring-blue-500 text-gray-900 dark:text-white transition-all duration-300 focus:caret-blue-500 focus:dark:caret-white"
+                  class="bg-white dark:bg-gray-700 px-4 py-3 border border-gray-300 focus:border-transparent dark:border-gray-600 rounded-lg outline-0 focus:ring-2 focus:ring-blue-500 w-full text-gray-900 dark:text-white transition-all duration-300 focus:caret-blue-500 focus:dark:caret-white"
                   type="text"
                   name="last-name"
                   id="last-name"
@@ -172,7 +172,7 @@
             </div>
             <button
               id="submit-btn"
-              class="bg-linear-to-r from-blue-500 hover:from-blue-600 to-indigo-600 hover:to-indigo-700 disabled:opacity-50 py-3 focus:border-transparent rounded-lg outline-0 focus:ring-2 focus:ring-blue-600 text-white transition-all duration-300 cursor-pointer disabled:cursor-not-allowed"
+              class="bg-linear-to-r from-blue-500 hover:from-blue-600 to-indigo-600 hover:to-indigo-700 disabled:opacity-50 py-3 focus:border-transparent rounded-lg outline-0 focus:ring-2 focus:ring-blue-600 text-white transition duration-300 cursor-pointer disabled:cursor-not-allowed"
             >
               Sign Up
             </button>
@@ -192,7 +192,12 @@
     </main>
 
     <!-- Sweetalert Library -->
-    <script src="./node_modules/sweetalert/dist/sweetalert.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"
+      integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <!-- JS File -->
     <script src="./js/auth-sign-up.js"></script>
   </body>
