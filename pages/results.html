@@ -47,23 +47,23 @@
   </header>
 
   <main class="mx-5 md:mx-42 px-4 py-12">
-    <div data-status="fail"
+    <div id="results-container" data-status="fail"
       class="group flex flex-col justify-center items-center gap-4 bg-linear-to-r data-[status=fail]:from-red-500 data-[status=success]:from-green-500 data-[status=fail]:to-pink-600 data-[status=success]:to-emerald-600 shadow-2xl mb-8 p-8 rounded-2xl">
       <div class="flex justify-center items-center text-white text-7xl">
         <i class="fa-solid fa-trophy"></i>
       </div>
-      <p class="text-white text-base">Passed</p>
-      <h2 class="text-white text-6xl">80%</h2>
+      <p id="student-status" class="text-white text-base">Passed</p>
+      <h2 id="total-score" class="text-white text-6xl">80%</h2>
       <div class="flex gap-5 group-data-[status=fail]:text-red-600 group-data-[status=success]:text-green-600">
         <div class="flex flex-col justify-center items-center gap-2 bg-white px-12 py-4 rounded-xl">
           <i class="text-4xl fa-regular fa-circle-check"></i>
           <p class="text-sm">Correct Questions</p>
-          <p class="text-2xl">8</p>
+          <p id="num-of-correct-answers" class="text-2xl">8</p>
         </div>
         <div class="flex flex-col justify-center items-center gap-2 bg-white px-12 py-4 rounded-xl">
           <i class="text-4xl fa-regular fa-circle-xmark"></i>
           <p class="text-sm">Wrong Questions</p>
-          <p class="text-2xl">2</p>
+          <p id="num-of-wrong-answers" class="text-2xl">2</p>
         </div>
       </div>
       <div class="flex justify-between">
@@ -77,86 +77,16 @@
     <div id="review-answers"
       class="flex flex-col gap-6 bg-white dark:bg-gray-800 shadow-2xl mb-6 sm:mb-8 p-6 sm:p-8 rounded-2xl transition-colors duration-300">
       <h2 class="text-gray-800 dark:text-white text-base">Review Answers:</h2>
-      <div data-question-status="correct"
-        class="group data-[question-status=correct]:bg-green-50 data-[question-status=correct]:dark:bg-green-900 data-[question-status=wrong]:bg-red-50 data-[question-status=wrong]:dark:bg-red-900 dark:bg-opacity-20 p-6 border-2 data-[question-status=correct]:border-green-500 data-[question-status=wrong]:border-red-500 rounded-xl">
-        <div class="flex gap-3">
-          <div>
-            <div
-              class="hidden group-data-[question-status=correct]:flex justify-center items-center bg-green-500 rounded-full w-8 h-8">
-              <i class="text-white text-xl fa-regular fa-circle-check"></i>
-            </div>
-            <div
-              class="hidden group-data-[question-status=wrong]:flex justify-center items-center bg-red-500 rounded-full w-8 h-8">
-              <i class="text-white fa-regular fa-circle-xmark"></i>
-            </div>
-          </div>
-          <div class="grow">
-            <h3 class="mb-3 text-gray-800 dark:text-white">1. What is the capital of France?</h3>
-            <div class="flex flex-col gap-2">
-              <!-- in js if user-selected && not correct bg-red-500 text-white, remove dark:bg-gray-700 p-3 rounded-lg text-gray-800 data-corr-ans:text-white dark:text-white -->
-              <p
-                class="flex items-center gap-2 bg-gray-100 data-corr-ans:bg-green-500 dark:bg-gray-700 p-3 rounded-lg text-gray-800 data-corr-ans:text-white dark:text-white">
-                London
-              </p>
-              <p
-                class="flex items-center gap-2 bg-gray-100 data-corr-ans:bg-green-500 dark:bg-gray-700 p-3 rounded-lg text-gray-800 data-corr-ans:text-white dark:text-white">
-                Berlin
-              </p>
-              <p data-corr-ans
-                class="flex items-center gap-2 bg-gray-100 data-corr-ans:bg-green-500 dark:bg-gray-700 p-3 rounded-lg text-gray-800 data-corr-ans:text-white dark:text-white">
-                <i class="text-white text-xl fa-regular fa-circle-check"></i>
-                Paris
-              </p>
-              <p
-                class="flex items-center gap-2 bg-gray-100 data-corr-ans:bg-green-500 dark:bg-gray-700 p-3 rounded-lg text-gray-800 data-corr-ans:text-white dark:text-white">
-                Madrid
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div data-question-status="wrong"
-        class="group data-[question-status=correct]:bg-green-50 data-[question-status=correct]:dark:bg-green-900 data-[question-status=wrong]:bg-red-50 data-[question-status=wrong]:dark:bg-red-900 dark:bg-opacity-20 p-6 border-2 data-[question-status=correct]:border-green-500 data-[question-status=wrong]:border-red-500 rounded-xl">
-        <div class="flex gap-3">
-          <div>
-            <div
-              class="hidden group-data-[question-status=correct]:flex justify-center items-center bg-green-500 rounded-full w-8 h-8">
-              <i class="text-white text-xl fa-regular fa-circle-check"></i>
-            </div>
-            <div
-              class="hidden group-data-[question-status=wrong]:flex justify-center items-center bg-red-500 rounded-full w-8 h-8">
-              <i class="text-white fa-regular fa-circle-xmark"></i>
-            </div>
-          </div>
-          <div class="grow">
-            <h3 class="mb-3 text-gray-800 dark:text-white">1. What is the capital of France?</h3>
-            <div class="flex flex-col gap-2">
-              <!-- in js if user-selected && not correct bg-red-500 text-white, remove bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-white -->
-              <p
-                class="flex items-center gap-2 bg-gray-100 data-corr-ans:bg-green-500 dark:bg-gray-700 p-3 rounded-lg text-gray-800 data-corr-ans:text-white dark:text-white">
-                <i class="text-white fa-regular fa-circle-xmark"></i>
-                London
-              </p>
-              <p
-                class="flex items-center gap-2 bg-gray-100 data-corr-ans:bg-green-500 dark:bg-gray-700 p-3 rounded-lg text-gray-800 data-corr-ans:text-white dark:text-white">
-                Berlin
-              </p>
-              <p data-corr-ans
-                class="flex items-center gap-2 bg-gray-100 data-corr-ans:bg-green-500 dark:bg-gray-700 p-3 rounded-lg text-gray-800 data-corr-ans:text-white dark:text-white">
-                <i class="text-white text-xl fa-regular fa-circle-check"></i>
-                Paris
-              </p>
-              <p
-                class="flex items-center gap-2 bg-gray-100 data-corr-ans:bg-green-500 dark:bg-gray-700 p-3 rounded-lg text-gray-800 data-corr-ans:text-white dark:text-white">
-                Madrid
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
+    <a
+      href="home.html"
+      class="flex justify-center items-center gap-3 bg-linear-to-r from-blue-500 hover:from-blue-600 to-indigo-600 hover:to-indigo-700 shadow-lg hover:shadow-xl py-4 rounded-xl w-full text-white hover:scale-101 transition-all duration-300 cursor-pointer">
+      <i class="fa-solid fa-house"></i>
+      Back to home
+    </a>
   </main>
+
+  <script src="../js/results.js" type="module"></script>
 </body>
 
 </html>
