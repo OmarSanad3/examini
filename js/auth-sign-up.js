@@ -30,6 +30,8 @@ const passReg =
 
 //////////////////////////////////////////////////
 
+let tmpImageBase64;
+
 let registeredUsers;
 
 if (localStorage.getItem("users")) {
@@ -125,6 +127,7 @@ profileInp.addEventListener("change", (event) => {
     reader.onload = (e) => {
       document.getElementById("profile-img").classList.remove("hidden");
       document.getElementById("profile-img").src = e.target.result;
+      tmpImageBase64 = e.target.result;
     };
     reader.readAsDataURL(file);
   }
@@ -188,7 +191,7 @@ signUpForm.addEventListener("submit", (e) => {
       lastName: lastNameInp.value,
       email: emailInp.value,
       password: passInp.value,
-      image: profileInp.value,
+      image: tmpImageBase64,
     };
 
     // flag
