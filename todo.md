@@ -1,6 +1,10 @@
-- [] Finish tailwind config
-- [] check spa using vanilla js
+- [x] Finish tailwind config
+- [x] check spa using vanilla js
 - [] generate a favicon
 - [] fix login colors
 - [] fix dark mode for sign-up and sign-in
 - [] clock from daisy ui
+- [] implement show/hidden password
+- [] make sure to add the submit button to both buttons
+- [] check on the sign and login bug design
+- [] tell sanad to take the header i made

@@ -8,13 +8,13 @@ body {
   font-family: sans-serif;
 }
 
-@theme {
-  --container-sm: 36rem; /* 576px */
-  --container-md: 48rem; /* 768px */
-  --container-lg: 62rem; /* 1024px */
-  --container-xl: 75rem; /* 1200px */
-  --container-2xl: 78.5rem; /* 1400px */
-}
+/* @theme {
+  --container-sm: 36rem;
+  --container-md: 48rem;
+  --container-lg: 62rem;
+  --container-xl: 75rem;
+  --container-2xl: 78.5rem;
+} */
 
 @utility container {
   margin-inline: auto;

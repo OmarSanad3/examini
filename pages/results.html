@@ -30,9 +30,14 @@
         </div>
       </div>
       <div class="flex gap-2">
-        <button
+        <button id="toggle-theme-btn"
           class="bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 p-2 rounded-lg text-gray-800 dark:text-white text-base hover:scale-110 transition-all duration-300 cursor-pointer">
-          <i class="fa-solid fa-moon"></i>
+          <span class="hidden">
+            <i class="fa-solid fa-moon"></i>
+          </span>
+          <span class="hidden">
+            <i class="hidden fa-regular fa-sun"></i>
+          </span>
         </button>
         <button
           class="bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 p-2 rounded-lg text-gray-800 dark:text-white text-base hover:scale-110 transition-all duration-300 cursor-pointer">
@@ -78,13 +83,15 @@
       class="flex flex-col gap-6 bg-white dark:bg-gray-800 shadow-2xl mb-6 sm:mb-8 p-6 sm:p-8 rounded-2xl transition-colors duration-300">
       <h2 class="text-gray-800 dark:text-white text-base">Review Answers:</h2>
     </div>
-    <a
-      href="home.html"
+    <a href="home.html"
       class="flex justify-center items-center gap-3 bg-linear-to-r from-blue-500 hover:from-blue-600 to-indigo-600 hover:to-indigo-700 shadow-lg hover:shadow-xl py-4 rounded-xl w-full text-white hover:scale-101 transition-all duration-300 cursor-pointer">
       <i class="fa-solid fa-house"></i>
       Back to home
     </a>
   </main>
+
+  <!-- Theme toggle buttons in the header -->
+  <script src="../js/utils/theme-toggle.js"></script>
 
   <script src="../js/results.js" type="module"></script>
 </body>
