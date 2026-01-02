@@ -12,6 +12,15 @@
 
     <!-- Page Title -->
     <title>Examini</title>
+
+    <!-- Guard -->
+    <script>
+      const currUser = localStorage.getItem("currUser");
+      if (currUser) {
+        console.error('You are already signed in❗❗❗');
+        location.href = "./home.html";
+      }
+    </script>
   </head>
 
   <body>

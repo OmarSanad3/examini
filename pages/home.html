@@ -13,6 +13,15 @@
 
   <!-- Page Title -->
   <title>Examini - Home Page</title>
+
+  <!-- Guard -->
+  <script>
+    const currUser = localStorage.getItem("currUser");
+    if (!currUser) {
+      console.error('You have to sign in. ❗❗❗');
+      location.href = "./sign-in.html";
+    }
+  </script>
 </head>
 
 <body
@@ -25,8 +34,8 @@
           <img class="w-full h-full object-cover" src="../assets/avatar-2.jpg" alt="avatar">
         </div>
         <div class="flex flex-col">
-          <p class="text-[#1E2939] dark:text-white">Omar Sanad</p>
-          <p class="text-[#6A7282] dark:text-[#99A1AF]">omarmohamedsanad3@gmai...</p>
+          <p id="user-full-name" class="text-[#1E2939] dark:text-white">bla bla</p>
+          <p id="user-email" class="text-[#6A7282] dark:text-[#99A1AF]">bla@bla.bla...</p>
         </div>
       </div>
       <div class="flex gap-2">
@@ -51,13 +60,13 @@
     </div>
   </header>
 
-  <main class="mx-5 md:mx-42 px-4 py-12">
+  <main id="main-container" data-exam-status="not-started" class="group mx-5 md:mx-42 px-4 py-12">
     <div class="mb-12">
-      <h1 class="mb-4 text-[#1E2939] dark:text-white text-2xl text-center">Welcome Omar</h1>
+      <h1 id="welcome-user-first-name" class="mb-4 text-[#1E2939] dark:text-white text-2xl text-center">Welcome bla</h1>
       <p class="text-[#4A5565] text-[16px] dark:text-[#99A1AF] text-center">Exam Information</p>
     </div>
     <div
-      class="flex flex-col justify-center items-center gap-4 bg-linear-to-r from-green-500 to-emerald-600 shadow-2xl mb-8 p-8 rounded-2xl">
+      class="hidden group-data-[exam-status=finished]:flex flex-col justify-center items-center gap-4 bg-linear-to-r from-green-500 to-emerald-600 shadow-2xl mb-8 p-8 rounded-2xl">
       <div class="flex justify-center items-center text-white text-7xl">
         <i class="fa-regular fa-circle-check"></i>
       </div>
@@ -70,6 +79,7 @@
         </a>
       </div>
     </div>
+
     <div
       class="flex flex-col bg-white dark:bg-gray-800 shadow-2xl rounded-2xl overflow-hidden transition-colors duration-300">
       <div class="flex bg-linear-to-r from-blue-500 to-indigo-600 p-8 sm:p-8 text-white">
@@ -123,13 +133,16 @@
           </div>
         </div>
         <button
-          class="flex justify-center items-center gap-3 bg-linear-to-r from-blue-500 hover:from-blue-600 to-indigo-600 hover:to-indigo-700 shadow-lg hover:shadow-xl py-4 rounded-xl w-full text-white hover:scale-101 transition-all duration-300 cursor-pointer">
+          class="group-data-[exam-status=finished]:hidden flex justify-center items-center gap-3 bg-linear-to-r from-blue-500 hover:from-blue-600 to-indigo-600 hover:to-indigo-700 shadow-lg hover:shadow-xl py-4 rounded-xl w-full text-white hover:scale-101 transition-all duration-300 cursor-pointer">
           <i class="fa-regular fa-circle-play"></i>
           Start Now
         </button>
       </div>
     </div>
   </main>
+
+  <!-- Home Rendering -->
+  <script src="../js/home.js" type="module"></script>
 
   <script src="../js/utils/theme-toggle.js"></script>
 </body>

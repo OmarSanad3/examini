@@ -13,6 +13,21 @@
 
   <!-- Page Title -->
   <title>Examini - Results</title>
+
+  <!-- Guard -->
+  <script>
+    const currUser = localStorage.getItem("currUser");
+    if (!currUser) {
+      console.error('You have to sign in. ❗❗❗');
+      location.href = "./sign-in.html";
+    }
+
+    const examStatus = localStorage.getItem("exam-status");
+    if (examStatus !== "finished") {
+      console.error(`You haven't finished the exam yet. ❗❗❗`);
+      location.href = "./home.html";
+    }
+  </script>
 </head>
 
 <body
