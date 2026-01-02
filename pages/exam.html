@@ -21,12 +21,13 @@
     }
 
     const examStatus = localStorage.getItem("exam-status");
-    if (examStatus === "finished") {
-      console.error(`You have finished the exam. ❗❗❗`);
-      location.href = "./home.html";
-    }
-    else if (examStatus === "not-started") {
-      console.error(`You haven't started the exam. ❗❗❗`);
+    if (examStatus !== "in-progress") {
+      if (examStatus === "finished") {
+        console.error(`You have finished the exam. ❗❗❗`);
+      }
+      else if (examStatus === "not-started") {
+        console.error(`You haven't started the exam. ❗❗❗`);
+      }
       location.href = "./home.html";
     }
   </script>

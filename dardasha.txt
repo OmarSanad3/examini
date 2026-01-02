@@ -1,0 +1,1 @@
+"exam-status" -> ["finished", "in-progress", "not-started"]

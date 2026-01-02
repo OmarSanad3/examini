@@ -184,7 +184,7 @@ signUpForm.addEventListener("submit", (e) => {
   ) {
     // user info
     const user = {
-      fisrtName: firstNameInp.value,
+      firstName: firstNameInp.value,
       lastName: lastNameInp.value,
       email: emailInp.value,
       password: passInp.value,

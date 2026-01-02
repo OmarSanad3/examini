@@ -92,9 +92,13 @@ signInForm.addEventListener("submit", (e) => {
     users.forEach((el) => {
       if (el.email == emailInp.value && el.password == passInp.value) {
         isVerified = true;
+
         setTimeout(() => {
           location.href = "../pages/home.html";
         }, 500);
+
+        localStorage.setItem("exam-status", "not-started");
+        localStorage.setItem("currUser", JSON.stringify(el));
       }
     });
 

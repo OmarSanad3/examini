@@ -8,3 +8,4 @@
 - [] make sure to add the submit button to both buttons
 - [] check on the sign and login bug design
 - [] tell sanad to take the header i made
+- [] image format must be base64
