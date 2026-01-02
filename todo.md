@@ -3,3 +3,4 @@
 - [] generate a favicon
 - [] fix login colors
 - [] fix dark mode for sign-up and sign-in
+- [] clock from daisy ui

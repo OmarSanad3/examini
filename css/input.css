@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+@variant dark (&:where(.dark, .dark *));
+
+@source "../js/*.js";
+
+body {
+  font-family: sans-serif;
+}
+
 .swal-icon--warning {
   @apply bg-red-200 border-red-700 animate-none;
 }
