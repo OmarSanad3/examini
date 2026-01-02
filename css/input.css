@@ -1,1 +1,44 @@
 @import "tailwindcss";
+@theme {
+  --container-sm: 36rem; /* 576px */
+  --container-md: 48rem; /* 768px */
+  --container-lg: 62rem; /* 1024px */
+  --container-xl: 75rem; /* 1200px */
+  --container-2xl: 78.5rem; /* 1400px */
+}
+@utility container {
+  margin-inline: auto;
+  padding-inline: 16px;
+  padding-block: 16px;
+  @variant sm {
+    max-width: var(--container-sm);
+  }
+  @variant md {
+    max-width: var(--container-md);
+  }
+  @variant lg {
+    max-width: var(--container-lg);
+  }
+  @variant xl {
+    max-width: var(--container-xl);
+  }
+  @variant 2xl {
+    max-width: var(--container-2xl);
+  }
+}
+
+aside#exam-aside {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 9999;
+
+  justify-content: center;
+  align-items: center;
+}
+
+aside#exam-aside {
+  @apply hidden md:block md:z-auto md:static md:inset-auto md:bg-transparent md:w-auto md:h-auto;
+}
