@@ -9,8 +9,46 @@ const numOfCorrectAnswersEle = document.getElementById(
 const numOfWrongAnswersEle = document.getElementById("num-of-wrong-answers");
 const resultsContainerEle = document.getElementById("results-container");
 
-const { userAnswers } = JSON.parse(localStorage.getItem("exam-info"));
+const certificateSectionEle = document.getElementById("certificate");
+const viewCertificateBtnEle = document.getElementById("view-certificate-btn");
+const closeCertificateBtnEle = document.getElementById("close-certificate-btn");
+
+const studentUserNameEle = document.getElementById("student-user-name");
+const examScoreEle = document.getElementById("exam-score");
+
+const issuedInEle = document.getElementById("issued-in");
+
 const appLang = localStorage.getItem("app-lang");
+
+const currentDate = new Date();
+const options = { year: "numeric", month: "long", day: "numeric" };
+issuedInEle.textContent = currentDate.toLocaleDateString(appLang, options);
+
+const { firstName, lastName } = JSON.parse(
+  localStorage.getItem("curr-user")
+);
+studentUserNameEle.textContent = `${firstName} ${lastName}`;
+
+const studentScore = localStorage.getItem("student-score");
+examScoreEle.textContent = studentScore;
+
+
+
+closeCertificateBtnEle.addEventListener("click", () => {
+  certificateSectionEle.dataset.certificate = "false";
+});
+
+viewCertificateBtnEle.addEventListener("click", () => {
+  certificateSectionEle.dataset.certificate = "true";
+});
+
+certificateSectionEle.addEventListener("click", (e) => {
+  if (e.target === certificateSectionEle) {
+    certificateSectionEle.dataset.certificate = "false";
+  }
+});
+
+const { userAnswers } = JSON.parse(localStorage.getItem("exam-info"));
 
 function getSingleQuestionToRender(
   { id, question, questionAr, answers, answersAr, correctAnswer },

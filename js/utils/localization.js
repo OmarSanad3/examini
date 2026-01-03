@@ -61,6 +61,7 @@ const translations = {
     certificateText: "This certifies that",
     certificateCompleted: "has successfully completed the",
     certificateScore: "with a score of",
+    close: "Close",
 
     // Validation
     requiredField: "This field is required",
@@ -136,6 +137,7 @@ const translations = {
     certificateText: "هذا يشهد أن",
     certificateCompleted: "أكمل بنجاح",
     certificateScore: "بدرجة",
+    close: "إغلاق",
 
     // Validation
     requiredField: "هذا الحقل مطلوب",
