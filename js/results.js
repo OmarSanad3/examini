@@ -24,13 +24,8 @@ const currentDate = new Date();
 const options = { year: "numeric", month: "long", day: "numeric" };
 issuedInEle.textContent = currentDate.toLocaleDateString(appLang, options);
 
-const { firstName, lastName } = JSON.parse(
-  localStorage.getItem("curr-user")
-);
+const { firstName, lastName } = JSON.parse(localStorage.getItem("curr-user"));
 studentUserNameEle.textContent = `${firstName} ${lastName}`;
-
-const studentScore = localStorage.getItem("student-score");
-examScoreEle.textContent = studentScore;
 
 closeCertificateBtnEle.addEventListener("click", () => {
   certificateSectionEle.dataset.certificate = "false";
@@ -69,7 +64,9 @@ function getSingleQuestionToRender(
             </div>
           </div>
           <div class="grow">
-            <h3 class="mb-3 text-gray-800 dark:text-white">${id}. ${ appLang === "en" ? question : questionAr}</h3>
+            <h3 class="mb-3 text-gray-800 dark:text-white">${id}. ${
+    appLang === "en" ? question : questionAr
+  }</h3>
             <div class="flex flex-col gap-2">
               <!-- in js if user-selected && not correct bg-red-500 text-white, remove bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-white -->
               <p 
@@ -88,7 +85,7 @@ function getSingleQuestionToRender(
                     ? '<i class="text-white text-xl fa-regular fa-circle-check"></i>'
                     : ""
                 }
-                ${ appLang === "en" ? answers[0] : answersAr[0]}
+                ${appLang === "en" ? answers[0] : answersAr[0]}
               </p>
               <p 
                 ${correctAnswer === 1 ? "data-corr-ans" : ""}
@@ -107,7 +104,7 @@ function getSingleQuestionToRender(
                     : ""
                 }
 
-                ${ appLang === "en" ? answers[1] : answersAr[1]}
+                ${appLang === "en" ? answers[1] : answersAr[1]}
               </p>
               <p
                 ${correctAnswer === 2 ? "data-corr-ans" : ""}
@@ -125,7 +122,7 @@ function getSingleQuestionToRender(
                     ? '<i class="text-white text-xl fa-regular fa-circle-check"></i>'
                     : ""
                 }
-                ${ appLang === "en" ? answers[2] : answersAr[2]}
+                ${appLang === "en" ? answers[2] : answersAr[2]}
               </p>
               <p 
                 ${correctAnswer === 3 ? "data-corr-ans" : ""}
@@ -143,7 +140,7 @@ function getSingleQuestionToRender(
                     ? '<i class="text-white text-xl fa-regular fa-circle-check"></i>'
                     : ""
                 }
-                ${ appLang === "en" ? answers[3] : answersAr[3]}
+                ${appLang === "en" ? answers[3] : answersAr[3]}
               </p>
             </div>
           </div>
@@ -177,6 +174,8 @@ function renderReviewAnswers() {
   localStorage.setItem("student-score", studentScore);
 
   totalScoreEle.textContent = studentScore + "%";
+
+  examScoreEle.textContent = studentScore;
 
   if (studentScore >= 70) {
     studentStatusEle.textContent = appLang === "en" ? "Passed" : "ناجح";
