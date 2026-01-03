@@ -16,3 +16,4 @@
 - [] check the transition effect for the onOpenMarkedQuestions & onCloseMarkedQuestions
 - [] add theme toggler to the auth pages
 - [] shuffle the questions
+- [] change start exam to be resume in case of (in progress)
