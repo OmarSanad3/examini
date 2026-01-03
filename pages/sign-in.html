@@ -1,122 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Icons -->
-    <link href="../css/all.min.css" rel="stylesheet" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Tailwind File -->
-    <link href="../css/output.css" rel="stylesheet" />
+  <!-- Icons -->
+  <link href="../css/all.min.css" rel="stylesheet" />
 
-    <!-- Page Title -->
-    <title>Examini</title>
+  <!-- Tailwind File -->
+  <link href="../css/output.css" rel="stylesheet" />
 
-    <!-- Guard -->
-    <script>
-      const currUser = localStorage.getItem("currUser");
-      if (currUser) {
-        console.error('You are already signed in❗❗❗');
-        location.href = "./home.html";
-      }
-    </script>
-  </head>
+  <!-- Page Title -->
+  <title>Examini</title>
 
-  <body>
-    <main>
-      <section
-        class="flex justify-center items-center bg-linear-to-br from-blue-50 dark:from-gray-900 to-indigo-100 dark:to-gray-800 p-4 min-h-screen transition-colors duration-300"
-      >
-        <div
-          class="bg-white dark:bg-gray-800 shadow-2xl p-6 sm:p-8 rounded-2xl w-full max-w-lg transition-colors duration-300"
-        >
-          <span
-            class="flex justify-center items-center bg-linear-to-br from-blue-500 to-indigo-600 mx-auto mb-6 rounded-full w-20 h-20 text-white"
-          >
-            <i class="fa-right-to-bracket fa-solid fa-2xl"></i>
-          </span>
-          <h1
-            class="mb-8 text-gray-800 dark:text-white md:text-2xl text-center transition-colors duration-300"
-          >
-            Login
-          </h1>
-          <form
-            id="sign-in-form"
-            autocomplete="off"
-            novalidate
-            class="flex flex-col space-y-5"
-          >
-            <label
-              class="flex flex-col gap-2 text-gray-700 dark:text-gray-300 transition-colors duration-300"
-              for="email"
-            >
-              Email Address
-              <input
-                class="bg-white dark:bg-gray-700 px-4 py-3 border border-gray-300 focus:border-transparent dark:border-gray-600 rounded-lg outline-0 focus:ring-2 focus:ring-blue-500 text-gray-900 dark:text-white transition-all duration-300 focus:caret-blue-500 focus:dark:caret-white"
-                type="email"
-                name="email"
-                id="email"
-              />
-              <p
-                class="hidden bg-red-50/50 p-2 rounded-md max-w-full font-medium text-red-500 dark:text-red-900 text-sm transition-colors duration-300 email"
-              >
-                test test test test test test tes
-              </p>
-            </label>
-            <label
-              class="flex flex-col gap-2 text-gray-700 dark:text-gray-300 transition-colors duration-300"
-              for="password"
-            >
-              Password
-              <div class="relative">
-                <input
-                  class="bg-white dark:bg-gray-700 px-4 py-3 border border-gray-300 focus:border-transparent dark:border-gray-600 rounded-lg outline-0 focus:ring-2 focus:ring-blue-500 w-full text-gray-900 dark:text-white transition-all duration-300 focus:caret-blue-500 focus:dark:caret-white"
-                  type="password"
-                  name="password"
-                  id="password"
-                />
-                <span
-                  class="top-1/2 right-0 absolute hover:text-blue-700 transition-colors -translate-1/2 duration-300 cursor-pointer"
-                >
-                  <i class="fa-solid fa-eye-slash"></i>
-                </span>
-              </div>
-              <p
-                class="hidden bg-red-50/50 p-2 rounded-md max-w-full font-medium text-red-500 dark:text-red-900 text-sm transition-colors duration-300 password"
-              >
-                test test test test test test tes
-              </p>
-            </label>
+  <!-- Guard -->
+  <script>
+    const currUser = localStorage.getItem("currUser");
+    if (currUser) {
+      console.error('You are already signed in❗❗❗');
+      location.href = "./home.html";
+    }
+  </script>
+</head>
 
-            <button
-              id="submit-btn"
-              class="bg-linear-to-r from-blue-500 hover:from-blue-600 to-indigo-600 hover:to-indigo-700 py-3 focus:border-transparent rounded-lg outline-0 focus:ring-2 focus:ring-blue-600 text-white transition duration-300 cursor-pointer"
-            >
-              Sign In
-            </button>
-          </form>
-          <div class="mt-6 text-gray-600 dark:text-gray-400 text-center">
-            <p>
-              Don't have an account?
-              <a
-                class="outline-0 focus:ring-2 focus:ring-blue-600 font-medium text-blue-500 hover:text-blue-600 transition-colors duration-300 cursor-pointer"
-                href="../sign-up.html"
-                >Sign Up</a
-              >
+<body>
+  <main>
+    <section
+      class="flex justify-center items-center bg-linear-to-br from-blue-50 dark:from-gray-900 to-indigo-100 dark:to-gray-800 p-4 min-h-screen transition-colors duration-300">
+      <div
+        class="bg-white dark:bg-gray-800 shadow-2xl p-6 sm:p-8 rounded-2xl w-full max-w-lg transition-colors duration-300">
+        <span
+          class="flex justify-center items-center bg-linear-to-br from-blue-500 to-indigo-600 mx-auto mb-6 rounded-full w-20 h-20 text-white">
+          <i class="fa-right-to-bracket fa-solid fa-2xl"></i>
+        </span>
+        <h1 class="mb-8 text-gray-800 dark:text-white md:text-2xl text-center transition-colors duration-300">
+          Login
+        </h1>
+        <form id="sign-in-form" autocomplete="off" novalidate class="flex flex-col space-y-5">
+          <label class="flex flex-col gap-2 text-gray-700 dark:text-gray-300 transition-colors duration-300"
+            for="email">
+            Email Address
+            <input
+              class="bg-white dark:bg-gray-700 px-4 py-3 border border-gray-300 focus:border-transparent dark:border-gray-600 rounded-lg outline-0 focus:ring-2 focus:ring-blue-500 text-gray-900 dark:text-white transition-all duration-300 focus:caret-blue-500 focus:dark:caret-white"
+              type="email" name="email" id="email" />
+            <p
+              class="hidden bg-red-50/50 p-2 rounded-md max-w-full font-medium text-red-500 dark:text-red-900 text-sm transition-colors duration-300 email">
+              test test test test test test tes
             </p>
-          </div>
+          </label>
+          <label class="flex flex-col gap-2 text-gray-700 dark:text-gray-300 transition-colors duration-300"
+            for="password">
+            Password
+            <div class="relative">
+              <input
+                class="bg-white dark:bg-gray-700 px-4 py-3 border border-gray-300 focus:border-transparent dark:border-gray-600 rounded-lg outline-0 focus:ring-2 focus:ring-blue-500 w-full text-gray-900 dark:text-white transition-all duration-300 focus:caret-blue-500 focus:dark:caret-white"
+                type="password" name="password" id="password" />
+              <span
+                class="top-1/2 right-0 absolute hover:text-blue-700 transition-colors -translate-1/2 duration-300 cursor-pointer">
+                <i class="fa-solid fa-eye-slash"></i>
+              </span>
+            </div>
+            <p
+              class="hidden bg-red-50/50 p-2 rounded-md max-w-full font-medium text-red-500 dark:text-red-900 text-sm transition-colors duration-300 password">
+              test test test test test test tes
+            </p>
+          </label>
+
+          <button id="submit-btn"
+            class="bg-linear-to-r from-blue-500 hover:from-blue-600 to-indigo-600 hover:to-indigo-700 py-3 focus:border-transparent rounded-lg outline-0 focus:ring-2 focus:ring-blue-600 text-white transition duration-300 cursor-pointer">
+            Sign In
+          </button>
+        </form>
+        <div class="mt-6 text-gray-600 dark:text-gray-400 text-center">
+          <p>
+            Don't have an account?
+            <a class="outline-0 focus:ring-2 focus:ring-blue-600 font-medium text-blue-500 hover:text-blue-600 transition-colors duration-300 cursor-pointer"
+              href="../sign-up.html">Sign Up</a>
+          </p>
         </div>
-      </section>
-    </main>
-    <!-- Sweetalert Library -->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"
-      integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <!-- JS File -->
-    <script src="../js/auth-sign-in.js"></script>
-  </body>
+      </div>
+    </section>
+  </main>
+  <!-- Sweetalert Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"
+    integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- JS File -->
+  <script src="../js/auth-sign-in.js"></script>
+
+  <script>
+    const htmlElement = document.documentElement;
+
+    if (
+      localStorage.getItem("color-theme") === "dark" ||
+      (!("color-theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
+    ) {
+      htmlElement.classList.add("dark");
+    } else {
+      htmlElement.classList.remove("dark");
+    }
+  </script>
+</body>
+
 </html>
