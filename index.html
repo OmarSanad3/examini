@@ -21,6 +21,12 @@
       console.error('You are already signed in❗❗❗');
       location.href = "./pages/home.html";
     }
+
+    window.addEventListener('pageshow', function (event) {
+      if (event.persisted) {
+        window.location.reload();
+      }
+    });
   </script>
 </head>
 

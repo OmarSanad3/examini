@@ -539,9 +539,6 @@
   .bg-gray-200 {
     background-color: var(--color-gray-200);
   }
-  .bg-gray-400 {
-    background-color: var(--color-gray-400);
-  }
   .bg-green-500 {
     background-color: var(--color-green-500);
   }
@@ -684,10 +681,6 @@
   .text-2xl {
     font-size: var(--text-2xl);
     line-height: var(--tw-leading, var(--text-2xl--line-height));
-  }
-  .text-3xl {
-    font-size: var(--text-3xl);
-    line-height: var(--tw-leading, var(--text-3xl--line-height));
   }
   .text-4xl {
     font-size: var(--text-4xl);
@@ -1363,21 +1356,6 @@
     &[data-status="fail"] {
       --tw-gradient-to: var(--color-pink-600);
       --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
-    }
-  }
-  .data-\[status\=finsished\]\:bg-green-400 {
-    &[data-status="finsished"] {
-      background-color: var(--color-green-400);
-    }
-  }
-  .data-\[status\=in-prgress\]\:bg-amber-400 {
-    &[data-status="in-prgress"] {
-      background-color: var(--color-amber-400);
-    }
-  }
-  .data-\[status\=not-started\]\:bg-gray-400 {
-    &[data-status="not-started"] {
-      background-color: var(--color-gray-400);
     }
   }
   .data-\[status\=success\]\:from-green-500 {
