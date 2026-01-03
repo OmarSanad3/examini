@@ -32,8 +32,6 @@ studentUserNameEle.textContent = `${firstName} ${lastName}`;
 const studentScore = localStorage.getItem("student-score");
 examScoreEle.textContent = studentScore;
 
-
-
 closeCertificateBtnEle.addEventListener("click", () => {
   certificateSectionEle.dataset.certificate = "false";
 });
@@ -58,7 +56,7 @@ function getSingleQuestionToRender(
 
   return `
       <div data-question-status="${isCorrect ? "correct" : "wrong"}"
-        class="group data-[question-status=correct]:bg-green-50 data-[question-status=correct]:dark:bg-green-900 data-[question-status=wrong]:bg-red-50 data-[question-status=wrong]:dark:bg-red-900 dark:bg-opacity-20 p-6 border-2 data-[question-status=correct]:border-green-500 data-[question-status=wrong]:border-red-500 rounded-xl">
+        class="group data-[question-status=correct]:bg-green-50 data-[question-status=correct]:dark:bg-green-900 data-[question-status=wrong]:bg-red-50 data-[question-status=wrong]:dark:bg-red-900 dark:bg-opacity-20 p-4 sm:p-6 border-2 data-[question-status=correct]:border-green-500 data-[question-status=wrong]:border-red-500 rounded-xl">
         <div class="flex gap-3">
           <div>
             <div

@@ -4,7 +4,7 @@
 - [x] fix login colors
 - [x] fix dark mode for sign-up and sign-in
 - [x] clock from daisy ui
-- [] implement show/hidden password
+- [x] implement show/hidden password
 - [x] make sure to add the submit button to both buttons
 - [x] check on the sign and login bug design
 - [x] tell sanad to take the header i made
@@ -14,11 +14,11 @@
 - [] replace sweet alter with some toast notification
 - [] add some animation when moving from question to another
 - [] check the transition effect for the onOpenMarkedQuestions & onCloseMarkedQuestions
-- [] add theme toggler to the auth pages
+- [x] add theme toggler to the auth pages
 - [] shuffle the questions
-- [] change start exam to be resume in case of (in progress)
-- [] padding for smaller screens
-- [] localization
-- [] localization for error messages in forms & sweet alert
-- [] in ar the eye icon must be on the left side of the input
+- [x] change start exam to be continue in case of (in progress)
+- [x] padding for smaller screens
+- [x] localization
+- [x] localization for error messages in forms & sweet alert
+- [x] in ar the eye icon must be on the left side of the input
 - [] add a model (are you sure you want to submit the exam?)

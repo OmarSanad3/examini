@@ -1,6 +1,7 @@
 const welcomeUserFirstName = document.getElementById("welcome-user-first-name");
 const mainContainerEle = document.getElementById("main-container");
 const startExamNowBtnEle = document.getElementById("start-exam-now-btn");
+const continueExamNowBtnEle = document.getElementById("continue-exam-now-btn");
 const scoreEle = document.getElementById("score");
 
 /* -------------------- Render firstName, lastName, email -------------------- */
@@ -23,6 +24,11 @@ if (examStatus === "finished") {
 
 /* -------------------- Start Exam Now Btn -------------------- */
 startExamNowBtnEle.addEventListener("click", () => {
+  localStorage.setItem("exam-status", "in-progress");
+  location.href = "./exam.html";
+});
+
+continueExamNowBtnEle.addEventListener("click", () => {
   localStorage.setItem("exam-status", "in-progress");
   location.href = "./exam.html";
 });
