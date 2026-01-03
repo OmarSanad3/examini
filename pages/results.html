@@ -19,12 +19,30 @@
     <!-- Theme Fetching -->
     <script src="../js/utils/theme-toggle.js"></script>
 
-    <!-- Guard -->
-    <script>
-      const currUser = localStorage.getItem("curr-user");
-      if (!currUser) {
-        console.error("You have to sign in. ❗❗❗");
-        location.href = "./sign-in.html";
+  <!-- Theme Fetching -->
+  <script src="../js/utils/theme-toggle.js"></script>
+
+  <!-- Localization -->
+  <script src="../js/utils/localization.js"></script>
+
+
+  <!-- Guard -->
+  <script>
+    const currUser = localStorage.getItem("curr-user");
+    if (!currUser) {
+      console.error('You have to sign in. ❗❗❗');
+      location.href = "./sign-in.html";
+    }
+
+    const examStatus = localStorage.getItem("exam-status");
+    if (examStatus !== "finished") {
+      console.error(`You haven't finished the exam yet. ❗❗❗`);
+      location.href = "./home.html";
+    }
+
+    window.addEventListener('pageshow', function (event) {
+      if (event.persisted) {
+        window.location.reload();
       }
 
       const examStatus = localStorage.getItem("exam-status");
@@ -33,6 +51,7 @@
         location.href = "./home.html";
       }
 
+
       window.addEventListener("pageshow", function (event) {
         if (event.persisted) {
           window.location.reload();
@@ -40,7 +59,6 @@
       });
     </script>
   </head>
-
   <body
     class="bg-linear-to-br from-gray-50 dark:from-gray-900 to-blue-50 dark:to-gray-800 h-full min-h-screen transition-colors duration-300"
   >
@@ -49,98 +67,86 @@
     <script src="../js/utils/header.js" type="module"></script>
 
     <!-- End Header -->
-
-    <main class="mx-5 md:mx-42 px-4 py-12">
-      <div
-        id="results-container"
-        data-status="fail"
-        class="group flex flex-col justify-center items-center gap-4 bg-linear-to-r data-[status=fail]:from-red-500 data-[status=success]:from-green-500 data-[status=fail]:to-pink-600 data-[status=success]:to-emerald-600 shadow-2xl mb-8 p-8 rounded-2xl"
-      >
-        <div class="flex justify-center items-center text-white text-7xl">
-          <i class="fa-solid fa-trophy"></i>
+  <main class="mx-5 md:mx-42 px-4 py-12">
+    <div id="results-container" data-status="fail"
+      class="group flex flex-col justify-center items-center gap-4 bg-linear-to-r data-[status=fail]:from-red-500 data-[status=success]:from-green-500 data-[status=fail]:to-pink-600 data-[status=success]:to-emerald-600 shadow-2xl mb-8 p-8 rounded-2xl">
+      <div class="flex justify-center items-center text-white text-7xl">
+        <i class="fa-solid fa-trophy"></i>
+      </div>
+      <p id="student-status" class="text-white text-base">Passed</p>
+      <h2 id="total-score" class="text-white text-6xl">80%</h2>
+      <div class="flex gap-5 group-data-[status=fail]:text-red-600 group-data-[status=success]:text-green-600">
+        <div class="flex flex-col justify-center items-center gap-2 bg-white px-4 md:px-12 py-4 rounded-xl text-center">
+          <i class="text-4xl fa-regular fa-circle-check"></i>
+          <p class="text-sm"><script>document.write(lang("correctAnswers"))</script></p>
+          <p id="num-of-correct-answers" class="text-2xl">8</p>
         </div>
-        <p id="student-status" class="text-white text-base">Passed</p>
-        <h2 id="total-score" class="text-white text-6xl">80%</h2>
-        <div
-          class="flex gap-5 group-data-[status=fail]:text-red-600 group-data-[status=success]:text-green-600"
-        >
-          <div
-            class="flex flex-col justify-center items-center gap-2 bg-white px-4 md:px-12 py-4 rounded-xl text-center"
-          >
-            <i class="text-4xl fa-regular fa-circle-check"></i>
-            <p class="text-sm">Correct Questions</p>
-            <p id="num-of-correct-answers" class="text-2xl">8</p>
-          </div>
-          <div
-            class="flex flex-col justify-center items-center gap-2 bg-white px-4 md:px-12 py-4 rounded-xl text-center"
-          >
-            <i class="text-4xl fa-regular fa-circle-xmark"></i>
-            <p class="text-sm">Wrong Questions</p>
-            <p id="num-of-wrong-answers" class="text-2xl">2</p>
-          </div>
-        </div>
-        <div class="flex justify-between">
-          <a
-            href="./results.html"
-            class="group-data-[status=fail]:hidden group-data-[status=success]:flex justify-center items-center gap-3 bg-white shadow-lg hover:shadow-xl px-4 sm:px-6 py-2 sm:py-3 rounded-lg text-green-600 text-base hover:scale-105 transition-all duration-300 cursor-pointer"
-          >
-            <i class="fa-solid fa-award"></i>
-            Get Certificate
-          </a>
+        <div class="flex flex-col justify-center items-center gap-2 bg-white px-4 md:px-12 py-4 rounded-xl text-center">
+          <i class="text-4xl fa-regular fa-circle-xmark"></i>
+          <p class="text-sm"><script>document.write(lang("wrongAnswers"))</script></p>
+          <p id="num-of-wrong-answers" class="text-2xl">2</p>
         </div>
       </div>
-      <div
-        id="review-answers"
-        class="flex flex-col gap-6 bg-white dark:bg-gray-800 shadow-2xl mb-6 sm:mb-8 p-6 sm:p-8 rounded-2xl transition-colors duration-300"
-      >
-        <h2 class="text-gray-800 dark:text-white text-base">Review Answers:</h2>
+      <div class="flex justify-between">
+        <a href="./results.html"
+          class="group-data-[status=fail]:hidden group-data-[status=success]:flex justify-center items-center gap-3 bg-white shadow-lg hover:shadow-xl px-4 sm:px-6 py-2 sm:py-3 rounded-lg text-green-600 text-base hover:scale-105 transition-all duration-300 cursor-pointer">
+          <i class="fa-solid fa-award"></i>
+          <script>document.write(lang("getCertificate"))</script>
+        </a>
       </div>
-      <a
-        href="home.html"
-        class="flex justify-center items-center gap-3 bg-linear-to-r from-blue-500 hover:from-blue-600 to-indigo-600 hover:to-indigo-700 shadow-lg hover:shadow-xl py-4 rounded-xl w-full text-white hover:scale-101 transition-all duration-300 cursor-pointer"
+    </div>
+    <div id="review-answers"
+      class="flex flex-col gap-6 bg-white dark:bg-gray-800 shadow-2xl mb-6 sm:mb-8 p-6 sm:p-8 rounded-2xl transition-colors duration-300">
+      <h2 class="text-gray-800 dark:text-white text-base"><script>document.write(lang("reviewAnswers"))</script>:</h2>
+    </div>
+    <a href="home.html"
+      class="flex justify-center items-center gap-3 bg-linear-to-r from-blue-500 hover:from-blue-600 to-indigo-600 hover:to-indigo-700 shadow-lg hover:shadow-xl py-4 rounded-xl w-full text-white hover:scale-101 transition-all duration-300 cursor-pointer">
+      <i class="fa-solid fa-house"></i>
+      <script>document.write(lang("backToHome"))</script>
+    </a>
+    
+    <!-- Start Certificat Section -->
+    <section
+      data-certificate="false"
+      id="certificate"
+      class="hidden z-50 fixed inset-0 data-[certificate=true]:flex justify-center items-center bg-black bg-opacity-50 p-4"
+    >
+      <div
+        class="flex flex-col justify-center items-center space-y-5 bg-gray-200 shadow-2xl p-6 sm:p-8 border-2 border-amber-500 rounded-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto"
       >
-        <i class="fa-solid fa-house"></i>
-        Back to home
-      </a>
-
-      <!-- Start Certificat Section -->
-      <section
-        data-certificate="false"
-        id="certificate"
-        class="hidden z-50 fixed inset-0 data-[certificate=true]:flex justify-center items-center bg-black bg-opacity-50 p-4"
-      >
-        <div
-          class="flex flex-col justify-center items-center space-y-5 bg-gray-200 shadow-2xl p-6 sm:p-8 border-2 border-amber-500 rounded-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto"
+        <button
+          class="self-end bg-gray-800 hover:bg-gray-700 px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg text-white text-sm sm:text-base transition-all duration-300 cursor-pointer"
         >
-          <button
-            class="self-end bg-gray-800 hover:bg-gray-700 px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg text-white text-sm sm:text-base transition-all duration-300 cursor-pointer"
-          >
-            Close
-          </button>
-          <span class="text-amber-500">
-            <i class="fa-solid fa-award fa-4x"></i>
-          </span>
-          <h3 class="text-gray-800 text-2xl sm:text-4xl">
-            Certificate of Completion
-          </h3>
-          <div
-            class="flex flex-col justify-center items-center space-y-4 text-base sm:text-xl"
-          >
-            <p>This certifies that</p>
-            <p class="text-xl sm:text-3xl">USER NAME</p>
-            <p>has successfully completed the</p>
-            <p class="text-lg sm:text-2xl">General Knowledge Exam</p>
-            <p>with a score of <span>(PERCENTAGE)</span>%</p>
-          </div>
-          <footer
-            class="self-stretch pt-5 border-gray-300 border-t-2 text-center"
-          >
-            <p class="text-gray-600 text-sm sm:text-base">January 3, 2026</p>
-          </footer>
+          Close
+        </button>
+        <span class="text-amber-500">
+          <i class="fa-solid fa-award fa-4x"></i>
+        </span>
+        <h3 class="text-gray-800 text-2xl sm:text-4xl">
+          Certificate of Completion
+        </h3>
+        <div
+          class="flex flex-col justify-center items-center space-y-4 text-base sm:text-xl"
+        >
+          <p>This certifies that</p>
+          <p class="text-xl sm:text-3xl">USER NAME</p>
+          <p>has successfully completed the</p>
+          <p class="text-lg sm:text-2xl">General Knowledge Exam</p>
+          <p>with a score of <span>(PERCENTAGE)</span>%</p>
         </div>
-      </section>
-      <!-- End Certificat Section -->
-    </main>
+        <footer
+          class="self-stretch pt-5 border-gray-300 border-t-2 text-center"
+        >
+          <p class="text-gray-600 text-sm sm:text-base">January 3, 2026</p>
+        </footer>
+      </div>
+    </section>
+    <!-- End Certificat Section -->
+    
+  </main>
+
+  <script src="../js/results.js" type="module"></script>
+</body>
 
     <script src="../js/results.js" type="module"></script>
   </body>

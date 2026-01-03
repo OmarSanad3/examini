@@ -1,1 +1,1 @@
-export const EXAM_DURATION = 1000 * 60 * 2; // .5 minutes
+export const EXAM_DURATION = 1000 * 60 * 30; // 30 minutes
