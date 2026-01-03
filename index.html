@@ -18,8 +18,8 @@
   <title>Examini</title>
 
   <!-- Theme Fetching -->
-  <script src="../js/utils/theme-toggle.js"></script>
-
+  <script src="./js/utils/theme-toggle.js"></script>
+  
   <!-- Guard -->
   <script>
     const currUser = localStorage.getItem("curr-user");
@@ -46,7 +46,8 @@
           class="flex justify-center items-center bg-linear-to-br from-blue-500 to-indigo-600 mx-auto mb-6 rounded-full w-20 h-20 text-white">
           <i class="fa-regular fa-user fa-2xl"></i>
         </span>
-        <h1 class="mb-8 text-gray-800 dark:text-white md:text-2xl text-center transition-colors duration-300">
+        <h1 data-i18n="register"
+          class="mb-8 text-gray-800 dark:text-white md:text-2xl text-center transition-colors duration-300">
           Register
         </h1>
         <form id="register-form" class="flex flex-col space-y-5" autocomplete="off" novalidate>
