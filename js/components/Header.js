@@ -23,11 +23,11 @@ export const Header = (fullName, email, imageUrl) => {
           <button id="toggle-theme-btn"
             onclick="toggleTheme()"
             class="bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 p-2 rounded-lg text-gray-800 dark:text-white text-base hover:scale-110 transition-all duration-300 cursor-pointer">
-            <span class="darK:hidden inline">
-              <i class="fa-solid fa-moon"></i>
+            <span class="dark:hidden inline">
+              <i class="fa-solid fa-moon dark:hidden inline"></i>
             </span>
             <span class="hidden dark:inline">
-              <i class="hidden fa-regular fa-sun"></i>
+              <i class="fa-regular fa-sun"></i>
             </span>
           </button>
           <button
