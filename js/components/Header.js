@@ -21,11 +21,12 @@ export const Header = (fullName, email, imageUrl) => {
         </div>
         <div class="flex gap-2">
           <button id="toggle-theme-btn"
+            onclick="toggleTheme()"
             class="bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 p-2 rounded-lg text-gray-800 dark:text-white text-base hover:scale-110 transition-all duration-300 cursor-pointer">
-            <span class="hidden">
+            <span class="darK:hidden inline">
               <i class="fa-solid fa-moon"></i>
             </span>
-            <span class="hidden">
+            <span class="hidden dark:inline">
               <i class="hidden fa-regular fa-sun"></i>
             </span>
           </button>

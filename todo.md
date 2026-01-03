@@ -5,7 +5,7 @@
 - [x] fix dark mode for sign-up and sign-in
 - [x] clock from daisy ui
 - [] implement show/hidden password
-- [] make sure to add the submit button to both buttons
+- [x] make sure to add the submit button to both buttons
 - [x] check on the sign and login bug design
 - [x] tell sanad to take the header i made
 - [x] image format must be base64

@@ -80,8 +80,6 @@
     --text-xl--line-height: calc(1.75 / 1.25);
     --text-2xl: 1.5rem;
     --text-2xl--line-height: calc(2 / 1.5);
-    --text-3xl: 1.875rem;
-    --text-3xl--line-height: calc(2.25 / 1.875);
     --text-4xl: 2.25rem;
     --text-4xl--line-height: calc(2.5 / 2.25);
     --text-6xl: 3.75rem;
@@ -329,6 +327,9 @@
   }
   .hidden {
     display: none;
+  }
+  .inline {
+    display: inline;
   }
   .inline-flex {
     display: inline-flex;
@@ -1502,6 +1503,11 @@
   .\32 xl\:max-w-\[78\.5rem\] {
     @media (width >= 96rem) {
       max-width: 78.5rem;
+    }
+  }
+  .dark\:inline {
+    &:where(.dark, .dark *) {
+      display: inline;
     }
   }
   .dark\:border-gray-500 {
