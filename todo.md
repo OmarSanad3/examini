@@ -1,6 +1,6 @@
 - [x] Finish tailwind config
 - [x] check spa using vanilla js
-- [] generate a favicon
+- [x] generate a favicon
 - [x] fix login colors
 - [x] fix dark mode for sign-up and sign-in
 - [x] clock from daisy ui
@@ -18,3 +18,7 @@
 - [] shuffle the questions
 - [] change start exam to be resume in case of (in progress)
 - [] padding for smaller screens
+- [] localization
+- [] localization for error messages in forms & sweet alert
+- [] in ar the eye icon must be on the left side of the input
+- [] add a model (are you sure you want to submit the exam?)
