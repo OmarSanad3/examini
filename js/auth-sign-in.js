@@ -97,6 +97,7 @@ signInForm.addEventListener("submit", (e) => {
           location.href = "../pages/home.html";
         }, 500);
 
+        localStorage.setItem("exam-info", null);
         localStorage.setItem("exam-status", "not-started");
         localStorage.setItem("currUser", JSON.stringify(el));
       }

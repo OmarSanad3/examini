@@ -44,9 +44,9 @@
     <div
       class="flex gap-5 mx-auto px-4 py-4 sm:max-w-[36rem] md:max-w-[48rem] lg:max-w-[62rem] 2xl:max-w-[78.5rem] xl:max-w-[75rem]">
       <!-- Start aside -->
-      <aside id="exam-aside" class="flex flex-col space-y-6 order-2 w-75">
+      <aside id="exam-aside" class="hidden flex-col space-y-6 order-2 w-75">
         <!-- Start Timer -->
-        <div data-timer="normal" id="timer"
+        <div data-timer="normal" id="timer-1"
           class="group hidden md:block bg-white dark:bg-gray-800 shadow-xl p-6 rounded-xl transition-colors duration-300">
           <div class="flex items-center gap-3 mb-4">
             <span
@@ -58,9 +58,9 @@
           </div>
           <div
             class="flex justify-center items-center dark:group-data-[timer=normal]:bg-blue-900/20 dark:group-data-[timer=warning]:bg-red-900/20 group-data-[timer=normal]:bg-blue-100 group-data-[timer=warning]:bg-red-50 py-4 rounded-lg font-mono dark:group-data-[timer=normal]:text-blue-400 dark:group-data-[timer=warning]:text-red-400 group-data-[timer=normal]:text-blue-600 group-data-[timer=warning]:text-red-600 text-4xl text-center transition-colors group-data-[timer=warning]:animate-pulse duration-300">
-            <span id="minutes">20</span>
+            <span id="minutes-2"></span>
             <span>:</span>
-            <span id="seconds">00</span>
+            <span id="seconds-2"></span>
           </div>
         </div>
         <!-- End Timer -->
@@ -70,66 +70,17 @@
             <h3 class="text-gray-800 dark:text-white transition-colors duration-300">
               Questions: 10
             </h3>
-            <button
+            <button onClick="onCloseMarkedQuestions()"
               class="md:hidden bg-linear-to-r from-blue-500 hover:from-blue-600 to-indigo-600 hover:to-indigo-700 rounded-full w-7 h-7 text-white hover:scale-[103%] transition duration-300 cursor-pointer">
               &Cross;
             </button>
           </div>
-          <div class="gap-2 grid grid-cols-5">
-            <span data-status="answered"
-              class="group relative flex justify-center items-center bg-gray-100 data-[status=answered]:bg-green-500 dark:bg-gray-700 data-[status=current]:bg-linear-to-br data-[status=current]:from-blue-500 data-[status=current]:to-indigo-600 rounded-lg data-[status=current]:ring-2 data-[status=current]:ring-blue-300 w-10 h-10 text-gray-800 data-[status=answered]:text-white data-[status=current]:text-white dark:text-white hover:scale-105 transition-all duration-300 cursor-pointer">1
-              <span class="hidden group-data-[status=marked]:inline-flex top-0 right-0 absolute text-yellow-500"><i
-                  class="fa-solid fa-bookmark"></i></span>
-            </span>
-            <span data-status="current"
-              class="group relative flex justify-center items-center bg-gray-100 data-[status=answered]:bg-green-500 dark:bg-gray-700 data-[status=current]:bg-linear-to-br data-[status=current]:from-blue-500 data-[status=current]:to-indigo-600 rounded-lg data-[status=current]:ring-2 data-[status=current]:ring-blue-300 w-10 h-10 text-gray-800 data-[status=answered]:text-white data-[status=current]:text-white dark:text-white hover:scale-105 transition-all duration-300 cursor-pointer">2
-              <span class="hidden group-data-[status=marked]:inline-flex top-0 right-0 absolute text-yellow-500"><i
-                  class="fa-solid fa-bookmark"></i></span>
-            </span>
-            <span data-status="marked"
-              class="group relative flex justify-center items-center bg-gray-100 data-[status=answered]:bg-green-500 dark:bg-gray-700 data-[status=current]:bg-linear-to-br data-[status=current]:from-blue-500 data-[status=current]:to-indigo-600 rounded-lg data-[status=current]:ring-2 data-[status=current]:ring-blue-300 w-10 h-10 text-gray-800 data-[status=answered]:text-white data-[status=current]:text-white dark:text-white hover:scale-105 transition-all duration-300 cursor-pointer">3
-              <span class="hidden group-data-[status=marked]:inline-flex top-0 right-0 absolute text-yellow-500"><i
-                  class="fa-solid fa-bookmark"></i></span>
-            </span>
-            <span data-status="marked"
-              class="group relative flex justify-center items-center bg-gray-100 data-[status=answered]:bg-green-500 dark:bg-gray-700 data-[status=current]:bg-linear-to-br data-[status=current]:from-blue-500 data-[status=current]:to-indigo-600 rounded-lg data-[status=current]:ring-2 data-[status=current]:ring-blue-300 w-10 h-10 text-gray-800 data-[status=answered]:text-white data-[status=current]:text-white dark:text-white hover:scale-105 transition-all duration-300 cursor-pointer">4
-              <span class="hidden group-data-[status=marked]:inline-flex top-0 right-0 absolute text-yellow-500"><i
-                  class="fa-solid fa-bookmark"></i></span>
-            </span>
-            <span data-status="marked"
-              class="group relative flex justify-center items-center bg-gray-100 data-[status=answered]:bg-green-500 dark:bg-gray-700 data-[status=current]:bg-linear-to-br data-[status=current]:from-blue-500 data-[status=current]:to-indigo-600 rounded-lg data-[status=current]:ring-2 data-[status=current]:ring-blue-300 w-10 h-10 text-gray-800 data-[status=answered]:text-white data-[status=current]:text-white dark:text-white hover:scale-105 transition-all duration-300 cursor-pointer">5
-              <span class="hidden group-data-[status=marked]:inline-flex top-0 right-0 absolute text-yellow-500"><i
-                  class="fa-solid fa-bookmark"></i></span>
-            </span>
-            <span data-status="marked"
-              class="group relative flex justify-center items-center bg-gray-100 data-[status=answered]:bg-green-500 dark:bg-gray-700 data-[status=current]:bg-linear-to-br data-[status=current]:from-blue-500 data-[status=current]:to-indigo-600 rounded-lg data-[status=current]:ring-2 data-[status=current]:ring-blue-300 w-10 h-10 text-gray-800 data-[status=answered]:text-white data-[status=current]:text-white dark:text-white hover:scale-105 transition-all duration-300 cursor-pointer">6
-              <span class="hidden group-data-[status=marked]:inline-flex top-0 right-0 absolute text-yellow-500"><i
-                  class="fa-solid fa-bookmark"></i></span>
-            </span>
-            <span data-status="marked"
-              class="group relative flex justify-center items-center bg-gray-100 data-[status=answered]:bg-green-500 dark:bg-gray-700 data-[status=current]:bg-linear-to-br data-[status=current]:from-blue-500 data-[status=current]:to-indigo-600 rounded-lg data-[status=current]:ring-2 data-[status=current]:ring-blue-300 w-10 h-10 text-gray-800 data-[status=answered]:text-white data-[status=current]:text-white dark:text-white hover:scale-105 transition-all duration-300 cursor-pointer">7
-              <span class="hidden group-data-[status=marked]:inline-flex top-0 right-0 absolute text-yellow-500"><i
-                  class="fa-solid fa-bookmark"></i></span>
-            </span>
-            <span data-status=""
-              class="group relative flex justify-center items-center bg-gray-100 data-[status=answered]:bg-green-500 dark:bg-gray-700 data-[status=current]:bg-linear-to-br data-[status=current]:from-blue-500 data-[status=current]:to-indigo-600 rounded-lg data-[status=current]:ring-2 data-[status=current]:ring-blue-300 w-10 h-10 text-gray-800 data-[status=answered]:text-white data-[status=current]:text-white dark:text-white hover:scale-105 transition-all duration-300 cursor-pointer">8
-              <span class="hidden group-data-[status=marked]:inline-flex top-0 right-0 absolute text-yellow-500"><i
-                  class="fa-solid fa-bookmark"></i></span>
-            </span>
-            <span data-status=""
-              class="group relative flex justify-center items-center bg-gray-100 data-[status=answered]:bg-green-500 dark:bg-gray-700 data-[status=current]:bg-linear-to-br data-[status=current]:from-blue-500 data-[status=current]:to-indigo-600 rounded-lg data-[status=current]:ring-2 data-[status=current]:ring-blue-300 w-10 h-10 text-gray-800 data-[status=answered]:text-white data-[status=current]:text-white dark:text-white hover:scale-105 transition-all duration-300 cursor-pointer">9
-              <span class="hidden group-data-[status=marked]:inline-flex top-0 right-0 absolute text-yellow-500"><i
-                  class="fa-solid fa-bookmark"></i></span>
-            </span>
-            <span data-status=""
-              class="group relative flex justify-center items-center bg-gray-100 data-[status=answered]:bg-green-500 dark:bg-gray-700 data-[status=current]:bg-linear-to-br data-[status=current]:from-blue-500 data-[status=current]:to-indigo-600 rounded-lg data-[status=current]:ring-2 data-[status=current]:ring-blue-300 w-10 h-10 text-gray-800 data-[status=answered]:text-white data-[status=current]:text-white dark:text-white hover:scale-105 transition-all duration-300 cursor-pointer">10
-              <span class="hidden group-data-[status=marked]:inline-flex top-0 right-0 absolute text-yellow-500"><i
-                  class="fa-solid fa-bookmark"></i></span>
-            </span>
+          <div id="questions-numbers-container" class="gap-2 grid grid-cols-5">
+
           </div>
         </div>
         <!-- End Questions-numbers -->
-        <button id="submit-exam"
+        <button id="submit-exam-1"
           class="hidden md:flex justify-center items-center gap-3 bg-linear-to-r from-green-500 hover:from-green-600 to-emerald-600 hover:to-emerald-700 shadow-lg hover:shadow-xl py-4 rounded-xl w-full text-white transition duration-300 cursor-pointer">
           <span><i class="fa-solid fa-paper-plane"></i></span>
           <span>Submit exam</span>
@@ -139,7 +90,7 @@
       <!-- Start Section -->
       <section class="flex flex-col flex-1 space-y-6 order-1">
         <!-- Start Section-Header -->
-        <header data-timer="warning"
+        <header data-timer="normal" id="timer-2"
           class="group bg-white dark:bg-gray-800 shadow-lg p-4 rounded-xl transition-colors duration-300">
           <!-- Start Timer -->
           <div class="flex justify-between items-center">
@@ -148,24 +99,29 @@
                 class="group-data-[timer=normal]:text-blue-500 group-data-[timer=warning]:text-red-500 group-data-[timer=warning]:animate-pulse"><i
                   class="fa-regular fa-clock fa-lg"></i></span>
               <p class="text-gray-600 dark:text-white">
-                Time Remaining: <span>20</span><span>:</span><span>00</span>
+                Time Remaining:
+                <span id="minutes-1"></span>
+                <span>:</span>
+                <span id="seconds-1"></span>
               </p>
             </div>
             <div class="flex items-center space-x-2.5">
-              <span id="time-percentage"
+              <!-- <span id="time-percentage"
                 class="dark:group-data-[timer=normal]:text-white dark:group-data-[timer=warning]:text-red-400 group-data-[timer=normal]:text-gray-600 group-data-[timer=warning]:text-red-600">
                 100%
+              </span> -->
+              <span onClick="onOpenMarkedQuestions()"
+                class="md:hidden flex justify-center items-center bg-linear-to-r from-blue-500 hover:from-blue-600 to-indigo-600 hover:to-indigo-700 rounded-lg w-8 h-8 text-white hover:scale-[103%] transition duration-300 cursor-pointer">
+                <i class="fa-table-cells-large fa-solid"></i>
               </span>
-              <span
-                class="md:hidden flex justify-center items-center bg-linear-to-r from-blue-500 hover:from-blue-600 to-indigo-600 hover:to-indigo-700 rounded-lg w-8 h-8 text-white hover:scale-[103%] transition duration-300 cursor-pointer"><i
-                  class="fa-table-cells-large fa-solid"></i></span>
             </div>
           </div>
           <!-- End Timer -->
           <!-- Start Progress -->
           <div class="bg-gray-200 dark:bg-gray-700 mt-2.5 rounded-full w-full h-3 overflow-hidden">
-            <span data-width="80%" style="width: 80%"
-              class="block group-data-[timer=warning]:bg-red-500 group-data-[timer=normal]:bg-linear-to-r group-data-[timer=normal]:from-blue-500 group-data-[timer=normal]:to-indigo-600 h-full transition-colors duration-300"></span>
+            <span style="width: 100%" id="progress-bar"
+              class="block group-data-[timer=warning]:bg-red-500 group-data-[timer=normal]:bg-linear-to-r group-data-[timer=normal]:from-blue-500 group-data-[timer=normal]:to-indigo-600 h-full transition-colors duration-300">
+            </span>
           </div>
           <!-- End Progress -->
         </header>
@@ -177,7 +133,7 @@
             <p class="text-gray-500 dark:text-gray-400 text-xs transition-colors duration-300">
               Question <span id="question-number">1</span> of 10
             </p>
-            <button data-marked="true"
+            <button id="mark-btn-1" data-marked="true"
               class="group flex justify-center items-center bg-gray-100 data-[marked=true]:bg-yellow-500 dark:bg-gray-700 rounded-lg w-10 h-10 text-gray-600 dark:text-gray-400 hover:scale-[103%] transition-all duration-300 cursor-pointer">
               <i
                 class="group-data-[marked=false]:group-hover:text-yellow-500 group-data-[marked=true]:text-white transition-colors duration-300 fa-solid fa-bookmark"></i>
@@ -187,63 +143,28 @@
             What is the capital of France?
           </p>
           <div id="question-choices" class="flex flex-col space-y-3">
-            <label
-              class="flex items-center space-x-2.5 bg-gray-50 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 shadow-md p-4 rounded-xl w-full text-gray-800 dark:text-white hover:scale-[101%] transition-all duration-300 cursor-pointer">
-              <input class="sr-only peer" type="radio" name="question-one" />
-              <!-- Customized circle -->
-              <span
-                class="relative flex justify-center items-center peer-checked:bg-white after:bg-linear-to-r after:from-blue-500 after:to-indigo-600 border-2 border-gray-300 dark:border-gray-500 peer-checked:border-indigo-600 rounded-full after:rounded-full w-6 after:w-3 h-6 after:h-3 after:content-[''] after:scale-0 peer-checked:after:scale-100 after:transition-transform after:duration-300">
-              </span>
-              <span class="flex-1">Berlin</span>
-            </label>
-            <label
-              class="flex items-center space-x-2.5 bg-gray-50 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 shadow-md p-4 rounded-xl w-full text-gray-800 dark:text-white hover:scale-[101%] transition-all duration-300 cursor-pointer">
-              <input class="sr-only peer" type="radio" name="question-one" />
-              <!-- Customized circle -->
-              <span
-                class="relative flex justify-center items-center peer-checked:bg-white after:bg-linear-to-r after:from-blue-500 after:to-indigo-600 border-2 border-gray-300 dark:border-gray-500 peer-checked:border-indigo-600 rounded-full after:rounded-full w-6 after:w-3 h-6 after:h-3 after:content-[''] after:scale-0 peer-checked:after:scale-100 after:transition-transform after:duration-300">
-              </span>
-              <span class="flex-1">London</span>
-            </label>
-            <label
-              class="flex items-center space-x-2.5 bg-gray-50 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 shadow-md p-4 rounded-xl w-full text-gray-800 dark:text-white hover:scale-[101%] transition-all duration-300 cursor-pointer">
-              <input class="sr-only peer" type="radio" name="question-one" />
-              <!-- Customized circle -->
-              <span
-                class="relative flex justify-center items-center peer-checked:bg-white after:bg-linear-to-r after:from-blue-500 after:to-indigo-600 border-2 border-gray-300 dark:border-gray-500 peer-checked:border-indigo-600 rounded-full after:rounded-full w-6 after:w-3 h-6 after:h-3 after:content-[''] after:scale-0 peer-checked:after:scale-100 after:transition-transform after:duration-300">
-              </span>
-              <span class="flex-1">Paris</span>
-            </label>
-            <label
-              class="flex items-center space-x-2.5 bg-gray-50 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 shadow-md p-4 rounded-xl w-full text-gray-800 dark:text-white hover:scale-[101%] transition-all duration-300 cursor-pointer">
-              <input class="sr-only peer" type="radio" name="question-one" />
-              <!-- Customized circle -->
-              <span
-                class="relative flex justify-center items-center peer-checked:bg-white after:bg-linear-to-r after:from-blue-500 after:to-indigo-600 border-2 border-gray-300 dark:border-gray-500 peer-checked:border-indigo-600 rounded-full after:rounded-full w-6 after:w-3 h-6 after:h-3 after:content-[''] after:scale-0 peer-checked:after:scale-100 after:transition-transform after:duration-300">
-              </span>
-              <span class="flex-1">Madrid</span>
-            </label>
+
           </div>
         </div>
         <!-- Start Section-Footer -->
         <footer class="bg-white dark:bg-gray-800 shadow-lg p-4 sm:p-6 lg:p-8 rounded-xl transition-colors duration-300">
           <div class="flex justify-center items-center gap-2.5 mb-4 md:mb-0">
-            <button
-              class="flex justify-center items-center gap-2 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 disabled:opacity-50 px-6 py-3 rounded-lg text-gray-800 dark:text-white hover:scale-[103%] transition-all duration-300 cursor-pointer disabled:cursor-not-allowed">
+            <button id="prev-btn"
+              class="flex justify-center items-center gap-2 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 disabled:opacity-50 px-6 py-3 rounded-lg text-gray-800 dark:text-white hover:scale-[103%] transition-all duration-300 cursor-pointer disabled:cursor-not-allowed disabled:pointer-events-none">
               <span><i class="fa-caret-left fa-xl fa-solid"></i></span>
               <span>Previous</span>
             </button>
-            <button data-marked="true"
+            <button id="mark-btn-2" data-marked="true"
               class="flex justify-center items-center gap-2 bg-gray-200 data-[marked=true]:bg-yellow-500 data-[marked=true]:hover:bg-yellow-600 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 disabled:opacity-50 px-6 py-3 rounded-lg text-gray-800 data-[marked=true]:text-white dark:text-white hover:scale-[103%] transition-all duration-300 cursor-pointer disabled:cursor-not-allowed">
               <span><i class="fa-lg fa-solid fa-bookmark"></i></span>
             </button>
-            <button
-              class="flex justify-center items-center gap-2 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 bg-linear-to-r hover:bg-linear-to-r from-blue-500 hover:from-blue-600 to-indigo-600 hover:to-indigo-700 disabled:opacity-50 px-6 py-3 rounded-lg text-white hover:scale-[103%] transition duration-300 cursor-pointer disabled:cursor-not-allowed">
+            <button id="next-btn"
+              class="flex justify-center items-center gap-2 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 bg-linear-to-r hover:bg-linear-to-r from-blue-500 hover:from-blue-600 to-indigo-600 hover:to-indigo-700 disabled:opacity-50 px-6 py-3 rounded-lg text-white hover:scale-[103%] transition duration-300 cursor-pointer disabled:cursor-not-allowed disabled:pointer-events-none">
               <span>Next</span>
               <span><i class="fa-caret-right fa-xl fa-solid"></i></span>
             </button>
           </div>
-          <button id="submit-exam"
+          <button id="submit-exam-2"
             class="md:hidden bg-linear-to-r from-green-500 hover:from-green-600 to-emerald-600 hover:to-emerald-700 shadow-lg hover:shadow-xl py-4 rounded-xl w-full text-white transition duration-300 cursor-pointer">
             <span><i class="fa-solid fa-paper-plane"></i></span>
             <span>Submit exam</span>
@@ -254,6 +175,9 @@
       <!-- End Section -->
     </div>
   </main>
+
+  <!-- Exam JS -->
+  <script src="../js/exam.js" type="module"></script>
 
   <!-- Theme toggle buttons in the header -->
   <script src="../js/utils/theme-toggle.js" type="module"></script>

@@ -50,7 +50,7 @@ aside#exam-aside {
 }
 
 aside#exam-aside {
-  @apply hidden md:block md:z-auto md:static md:inset-auto md:bg-transparent md:w-auto md:h-auto;
+  @apply md:block md:z-auto md:static md:inset-auto md:bg-transparent md:w-auto md:h-auto transition-all duration-300;
 }
 
 
