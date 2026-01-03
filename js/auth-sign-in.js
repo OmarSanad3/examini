@@ -47,13 +47,17 @@ function validateInput(input, errorEl, regex, emptyMsg, invalidMsg) {
   return true;
 }
 
+const appLang = localStorage.getItem("app-lang");
+
+const langIndex = appLang === "ar" ? 1 : 0;
+
 emailInp.addEventListener("blur", () =>
   validateInput(
     emailInp,
     emailError,
     emailReg,
-    "This field is required.",
-    "Please enter a valid email."
+    ["This field is required.", "هذا الحقل مطلوب"][langIndex],
+    ["Please enter a valid email.", "الرجاء إدخال بريد إلكتروني صالح"][langIndex]
   )
 );
 
@@ -62,8 +66,8 @@ passInp.addEventListener("blur", () => {
     passInp,
     passError,
     passReg,
-    "This field is required.",
-    "Password must be at least 8 characters include an uppercase letter, a lowercase letter, a number, and a special character."
+    ["This field is required.", "هذا الحقل مطلوب"][langIndex],
+    ["Password must be at least 8 characters include an uppercase letter, a lowercase letter, a number, and a special character.", "يجب أن تتكون كلمة المرور من 8 أحرف على الأقل تشمل حرفًا كبيرًا وحرفًا صغيرًا ورقمًا ورمزًا خاصًا."][langIndex]
   );
 });
 
@@ -74,16 +78,16 @@ signInForm.addEventListener("submit", (e) => {
     emailInp,
     emailError,
     emailReg,
-    "This field is required.",
-    "Please enter a valid email."
+    ["This field is required.", "هذا الحقل مطلوب"][langIndex],
+    ["Please enter a valid email.", "الرجاء إدخال بريد إلكتروني صالح"][langIndex]
   );
 
   const isPassValid = validateInput(
     passInp,
     passError,
     passReg,
-    "This field is required.",
-    "Password must be at least 8 characters include an uppercase letter, a lowercase letter, a number, and a special character."
+    ["This field is required.", "هذا الحقل مطلوب"][langIndex],
+    ["Password must be at least 8 characters include an uppercase letter, a lowercase letter, a number, and a special character.", "يجب أن تتكون كلمة المرور من 8 أحرف على الأقل تشمل حرفًا كبيرًا وحرفًا صغيرًا ورقمًا ورمزًا خاصًا."][langIndex]
   );
 
   if (isEmailValid && isPassValid) {
@@ -105,10 +109,11 @@ signInForm.addEventListener("submit", (e) => {
 
     if (!isVerified) {
       swal({
-        title: "Failed",
-        text: "Invalid email or password!",
+        title: ["Failed", "فشل"][langIndex],
+        text: ["Invalid email or password!", "البريد الإلكتروني أو كلمة المرور غير صحيحة!"][langIndex],
         icon: "warning",
         dangerMode: true,
+        buttons: ["OK", "حسنًا"][langIndex],
       });
       signInForm.reset();
     }

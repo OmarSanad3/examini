@@ -61,13 +61,17 @@ function validateInput(input, errorEl, regex, emptyMsg, invalidMsg) {
   return true;
 }
 
+const appLang = localStorage.getItem("app-lang");
+
+const langIndex = appLang === "ar" ? 1 : 0;
+
 firstNameInp.addEventListener("blur", () =>
   validateInput(
     firstNameInp,
     firstNameError,
     nameReg,
-    "This field is required.",
-    "Please enter characters only."
+    ["This field is required.", "هذا الحقل مطلوب"][langIndex],
+    ["Please enter characters only.", "الرجاء إدخال أحرف فقط."][langIndex]
   )
 );
 
@@ -76,8 +80,8 @@ lastNameInp.addEventListener("blur", () =>
     lastNameInp,
     lastNameError,
     nameReg,
-    "This field is required.",
-    "Please enter characters only."
+    ["This field is required.", "هذا الحقل مطلوب"][langIndex],
+    ["Please enter characters only.", "الرجاء إدخال أحرف فقط."][langIndex]
   )
 );
 
@@ -86,8 +90,10 @@ emailInp.addEventListener("blur", () =>
     emailInp,
     emailError,
     emailReg,
-    "This field is required.",
-    "Please enter a valid email."
+    ["This field is required.", "هذا الحقل مطلوب"][langIndex],
+    ["Please enter a valid email.", "الرجاء إدخال بريد إلكتروني صالح"][
+      langIndex
+    ]
   )
 );
 
@@ -96,8 +102,11 @@ passInp.addEventListener("blur", () => {
     passInp,
     passError,
     passReg,
-    "This field is required.",
-    "Password must be at least 8 characters include an uppercase letter, a lowercase letter, a number, and a special character."
+    ["This field is required.", "هذا الحقل مطلوب"][langIndex],
+    [
+      "Password must be at least 8 characters include an uppercase letter, a lowercase letter, a number, and a special character.",
+      "يجب أن تتكون كلمة المرور من 8 أحرف على الأقل تشمل حرفًا كبيرًا وحرفًا صغيرًا ورقمًا ورمزًا خاصًا.",
+    ][langIndex]
   );
 });
 
@@ -105,12 +114,12 @@ rePassInp.addEventListener("blur", () => {
   rePassError.textContent = "";
 
   if (!rePassInp.value) {
-    rePassError.textContent = "This field is required";
+    rePassError.textContent = ["This field is required", "هذا الحقل مطلوب"][langIndex];
   } else if (!passReg.test(rePassInp.value)) {
     rePassError.textContent =
-      "Password must be at least 8 characters include an uppercase letter, a lowercase letter, a number, and a special character.";
+      ["Password must be at least 8 characters include an uppercase letter, a lowercase letter, a number, and a special character.", "يجب أن تتكون كلمة المرور من 8 أحرف على الأقل تشمل حرفًا كبيرًا وحرفًا صغيرًا ورقمًا ورمزًا خاصًا."][langIndex];
   } else if (rePassInp.value !== passInp.value) {
-    rePassError.textContent = "Passwords do not match";
+    rePassError.textContent = ["Passwords do not match", "كلمات المرور غير متطابقة"][langIndex];
   } else {
     rePassError.classList.add("hidden");
     return;
@@ -140,32 +149,37 @@ signUpForm.addEventListener("submit", (e) => {
     firstNameInp,
     firstNameError,
     nameReg,
-    "This field is required.",
-    "Please enter characters only."
+    ["This field is required.", "هذا الحقل مطلوب"][langIndex],
+    ["Please enter characters only.", "الرجاء إدخال أحرف فقط."][langIndex]
   );
 
   const isLastValid = validateInput(
     lastNameInp,
     lastNameError,
     nameReg,
-    "This field is required.",
-    "Please enter characters only."
+    ["This field is required.", "هذا الحقل مطلوب"][langIndex],
+    ["Please enter characters only.", "الرجاء إدخال أحرف فقط."][langIndex]
   );
 
   const isEmailValid = validateInput(
     emailInp,
     emailError,
     emailReg,
-    "This field is required.",
-    "Please enter a valid email."
+    ["This field is required.", "هذا الحقل مطلوب"][langIndex],
+    ["Please enter a valid email.", "الرجاء إدخال بريد إلكتروني صالح"][
+      langIndex
+    ]
   );
 
   const isPassValid = validateInput(
     passInp,
     passError,
     passReg,
-    "This field is required.",
-    "Password must be at least 8 characters include an uppercase letter, a lowercase letter, a number, and a special character."
+    ["This field is required.", "هذا الحقل مطلوب"][langIndex],
+    [
+      "Password must be at least 8 characters include an uppercase letter, a lowercase letter, a number, and a special character.",
+      "يجب أن تتكون كلمة المرور من 8 أحرف على الأقل تشمل حرفًا كبيرًا وحرفًا صغيرًا ورقمًا ورمزًا خاصًا.",
+    ][langIndex]
   );
 
   const isRePassValid =
@@ -174,7 +188,10 @@ signUpForm.addEventListener("submit", (e) => {
     passReg.test(rePassInp.value);
 
   if (!isRePassValid) {
-    rePassError.textContent = "Passwords do not match";
+    rePassError.textContent = [
+      "Passwords do not match",
+      "كلمات المرور غير متطابقة",
+    ][langIndex];
     rePassError.classList.remove("hidden");
   }
 
@@ -201,10 +218,11 @@ signUpForm.addEventListener("submit", (e) => {
       // if regestered before
       if (el.email == user.email) {
         swal({
-          title: "Failed",
-          text: "Email already exists!",
+          title: ["Failed", "فشل"][langIndex],
+          text: ["Email already exists!", "البريد الإلكتروني موجود بالفعل!"][langIndex],
           icon: "warning",
           dangerMode: true,
+          buttons: ["OK", "حسنًا"][langIndex],
         });
         signUpForm.reset();
         isExist = true;
@@ -219,10 +237,11 @@ signUpForm.addEventListener("submit", (e) => {
       localStorage.setItem("users", JSON.stringify(registeredUsers));
 
       swal({
-        title: "Success!",
-        text: "Your account has been created successfully.",
+        title: ["Success!", "نجاح"][langIndex],
+        text: ["Your account has been created successfully.", "تم إنشاء حسابك بنجاح."][langIndex],
         icon: "success",
         dangerMode: false,
+        buttons: ["OK", "حسنًا"][langIndex],
       }).then(() => {
         // redirect user to sign-in page
         setTimeout(() => {
