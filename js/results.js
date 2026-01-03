@@ -1,5 +1,4 @@
 import questions from "../data/questions.js";
-import userAnswers from "../data/user-ans.js";
 
 const reviewAnswersContainer = document.getElementById("review-answers");
 const studentStatusEle = document.getElementById("student-status");
@@ -9,6 +8,8 @@ const numOfCorrectAnswersEle = document.getElementById(
 );
 const numOfWrongAnswersEle = document.getElementById("num-of-wrong-answers");
 const resultsContainerEle = document.getElementById("results-container");
+
+const { userAnswers } = JSON.parse(localStorage.getItem("exam-info"));
 
 function getSingleQuestionToRender(
   { id, question, questionAr, answers, answersAr, correctAnswer },
@@ -128,8 +129,6 @@ function renderReviewAnswers() {
     else stats.numOfWrongAnswers++;
   }
 
-  console.log(stats);
-
   numOfCorrectAnswersEle.textContent = stats.numOfCorrectAnswers;
   numOfWrongAnswersEle.textContent = stats.numOfWrongAnswers;
 
@@ -137,6 +136,8 @@ function renderReviewAnswers() {
     (stats.numOfCorrectAnswers /
       (stats.numOfCorrectAnswers + stats.numOfWrongAnswers)) *
     100;
+
+  localStorage.setItem("student-score", studentScore);
 
   totalScoreEle.textContent = studentScore + "%";
 
