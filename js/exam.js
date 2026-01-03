@@ -220,7 +220,7 @@ markBtn2.addEventListener("click", onMarkedBtn);
 
 function submitExam() {
   localStorage.setItem("exam-status", "finished");
-  location.href = "/pages/results.html";
+  location.href = "./results.html";
 }
 submitExamBtnEle1.addEventListener("click", submitExam);
 submitExamBtnEle2.addEventListener("click", submitExam);

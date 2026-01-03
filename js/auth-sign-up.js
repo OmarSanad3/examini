@@ -226,7 +226,7 @@ signUpForm.addEventListener("submit", (e) => {
       }).then(() => {
         // redirect user to sign-in page
         setTimeout(() => {
-          location.href = "/pages/sign-in.html";
+          location.href = "./pages/sign-in.html";
         }, 500);
       });
     }

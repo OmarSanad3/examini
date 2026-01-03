@@ -94,7 +94,7 @@ signInForm.addEventListener("submit", (e) => {
         isVerified = true;
 
         setTimeout(() => {
-          location.href = "/pages/home.html";
+          location.href = "../pages/home.html";
         }, 500);
 
         localStorage.setItem("exam-info", null);
