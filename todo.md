@@ -1,10 +1,18 @@
 - [x] Finish tailwind config
 - [x] check spa using vanilla js
 - [] generate a favicon
-- [] fix login colors
-- [] fix dark mode for sign-up and sign-in
-- [] clock from daisy ui
+- [x] fix login colors
+- [x] fix dark mode for sign-up and sign-in
+- [x] clock from daisy ui
 - [] implement show/hidden password
 - [] make sure to add the submit button to both buttons
-- [] check on the sign and login bug design
-- [] tell sanad to take the header i made
+- [x] check on the sign and login bug design
+- [x] tell sanad to take the header i made
+- [x] image format must be base64
+- [x] check for a better way to handle theme toggle
+- [] make the results in home screen a component
+- [] replace sweet alter with some toast notification
+- [] add some animation when moving from question to another
+- [] check the transition effect for the onOpenMarkedQuestions & onCloseMarkedQuestions
+- [] add theme toggler to the auth pages
+- [] shuffle the questions

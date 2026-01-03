@@ -14,7 +14,7 @@ body {
   --container-lg: 62rem;
   --container-xl: 75rem;
   --container-2xl: 78.5rem;
-} */
+}
 
 @utility container {
   margin-inline: auto;
@@ -35,7 +35,7 @@ body {
   @variant 2xl {
     max-width: var(--container-2xl);
   }
-}
+} */
 
 aside#exam-aside {
   position: fixed;
@@ -50,7 +50,7 @@ aside#exam-aside {
 }
 
 aside#exam-aside {
-  @apply hidden md:block md:z-auto md:static md:inset-auto md:bg-transparent md:w-auto md:h-auto;
+  @apply md:block md:z-auto md:static md:inset-auto md:bg-transparent md:w-auto md:h-auto transition-all duration-300;
 }
 
 
