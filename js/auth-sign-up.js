@@ -232,3 +232,24 @@ signUpForm.addEventListener("submit", (e) => {
     }
   }
 });
+
+// //////////////////////////////
+// toggle show/hide pass
+
+const togglePassBtn = document.getElementById("toggle-password");
+const toggleRePassBtn = document.getElementById("toggle-repassword");
+
+function togglePassword(input, button) {
+  const isPassword = input.type === "password";
+  input.type = isPassword ? "text" : "password";
+  button.innerHTML = isPassword
+    ? `<i class="fa-solid fa-eye"></i>`
+    : `<i class="fa-solid fa-eye-slash"></i>`;
+}
+
+togglePassBtn.addEventListener("click", () =>
+  togglePassword(passInp, togglePassBtn)
+);
+toggleRePassBtn.addEventListener("click", () =>
+  togglePassword(rePassInp, toggleRePassBtn)
+);
