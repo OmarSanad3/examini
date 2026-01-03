@@ -24,5 +24,5 @@ if (examStatus === "finished") {
 /* -------------------- Start Exam Now Btn -------------------- */
 startExamNowBtnEle.addEventListener("click", () => {
   localStorage.setItem("exam-status", "in-progress");
-  location.href = "./exam.html";
+  location.href = "/pages/exam.html";
 });
