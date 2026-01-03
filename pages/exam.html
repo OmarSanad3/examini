@@ -17,7 +17,7 @@
   <script>
     const currUser = localStorage.getItem("curr-user");
     if (!currUser) {
-      location.href = "/pages/sign-in.html";
+      location.href = "./sign-in.html";
     }
 
     const examStatus = localStorage.getItem("exam-status");
@@ -28,7 +28,7 @@
       else if (examStatus === "not-started") {
         console.error(`You haven't started the exam. ❗❗❗`);
       }
-      location.href = "/pages/home.html";
+      location.href = "./home.html";
     }
   </script>
 </head>

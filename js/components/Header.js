@@ -1,7 +1,7 @@
 export const Header = (fullName, email, imageUrl) => {
   window.onSignOut = () => {
     localStorage.removeItem("curr-user");
-    location.href = "/pages/sign-in.html";
+    location.href = "./sign-in.html";
   };
 
   return `
