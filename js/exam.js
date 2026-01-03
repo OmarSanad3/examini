@@ -33,7 +33,11 @@ const [submitExamBtnEle1, submitExamBtnEle2] = [
   document.getElementById("submit-exam-1"),
   document.getElementById("submit-exam-2"),
 ];
+/* -------------------- Language -------------------- */
+const appLang = localStorage.getItem("app-lang");
+
 /* -------------------- Declared Variables -------------------- */
+
 let userAnswers = Array(questionsData.length).fill(null);
 let isMarkedQuestion = Array(questionsData.length).fill(false);
 
@@ -98,7 +102,10 @@ renderAndUpdateLocalStorage();
 
 function renderQuestionInfo() {
   questionNumberEle.textContent = questionIndex + 1;
-  questionEle.textContent = questionsData[questionIndex].question;
+  questionEle.textContent =
+    appLang === "ar"
+      ? questionsData[questionIndex].questionAr
+      : questionsData[questionIndex].question;
 }
 
 function renderMarkButtons() {
@@ -124,7 +131,9 @@ function renderNextPrevButtons() {
 function renderChoices() {
   questionChoicesContainerEle.innerHTML = "";
 
-  questionsData[questionIndex].answers.forEach((ans, ansIdx) => {
+  const answers = appLang === "ar" ? questionsData[questionIndex].answersAr : questionsData[questionIndex].answers;
+
+  answers.forEach((ans, ansIdx) => {
     const answerHTML = Answer(
       ans,
       userAnswers[questionIndex] === ansIdx,

@@ -20,6 +20,9 @@
   <!-- Theme Fetching -->
   <script src="../js/utils/theme-toggle.js"></script>
 
+  <!-- Localization -->
+  <script src="../js/utils/localization.js"></script>
+
   <!-- Guard -->
   <script>
     const currUser = localStorage.getItem("curr-user");
@@ -47,12 +50,12 @@
           <i class="fa-right-to-bracket fa-solid fa-2xl"></i>
         </span>
         <h1 class="mb-8 text-gray-800 dark:text-white md:text-2xl text-center transition-colors duration-300">
-          Login
+          <script>document.write(lang("login"))</script>
         </h1>
         <form id="sign-in-form" autocomplete="off" novalidate class="flex flex-col space-y-5">
           <label class="flex flex-col gap-2 text-gray-700 dark:text-gray-300 transition-colors duration-300"
             for="email">
-            Email Address
+            <script>document.write(lang("email"))</script>
             <input
               class="bg-white dark:bg-gray-700 px-4 py-3 border border-gray-300 focus:border-transparent dark:border-gray-600 rounded-lg outline-0 focus:ring-2 focus:ring-blue-500 text-gray-900 dark:text-white transition-all duration-300 focus:caret-blue-500 focus:dark:caret-white"
               type="email" name="email" id="email" />
@@ -63,7 +66,7 @@
           </label>
           <label class="flex flex-col gap-2 text-gray-700 dark:text-gray-300 transition-colors duration-300"
             for="password">
-            Password
+            <script>document.write(lang("password"))</script>
             <div class="relative">
               <input
                 class="bg-white dark:bg-gray-700 px-4 py-3 border border-gray-300 focus:border-transparent dark:border-gray-600 rounded-lg outline-0 focus:ring-2 focus:ring-blue-500 w-full text-gray-900 dark:text-white transition-all duration-300 focus:caret-blue-500 focus:dark:caret-white"
@@ -81,14 +84,14 @@
 
           <button id="submit-btn"
             class="bg-linear-to-r from-blue-500 hover:from-blue-600 to-indigo-600 hover:to-indigo-700 py-3 focus:border-transparent rounded-lg outline-0 focus:ring-2 focus:ring-blue-600 text-white transition duration-300 cursor-pointer">
-            Sign In
+            <script>document.write(lang("signIn"))</script>
           </button>
         </form>
         <div class="mt-6 text-gray-600 dark:text-gray-400 text-center">
           <p>
-            Don't have an account?
+            <script>document.write(lang("dontHaveAccount"))</script>
             <a class="outline-0 focus:ring-2 focus:ring-blue-600 font-medium text-blue-500 hover:text-blue-600 transition-colors duration-300 cursor-pointer"
-              href="../">Sign Up</a>
+              href="../"><script>document.write(lang("signUp"))</script></a>
           </p>
         </div>
       </div>

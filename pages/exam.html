@@ -20,6 +20,9 @@
   <!-- Theme Fetching -->
   <script src="../js/utils/theme-toggle.js"></script>
 
+  <!-- Localization -->
+  <script src="../js/utils/localization.js"></script>
+
   <script>
     const currUser = localStorage.getItem("curr-user");
     if (!currUser) {
@@ -65,10 +68,10 @@
               class="group-data-[timer=normal]:text-blue-500 group-data-[timer=warning]:text-red-500 group-data-[timer=warning]:animate-pulse"><i
                 class="fa-regular fa-clock fa-lg"></i></span>
             <p class="text-gray-800 dark:text-white transition-colors duration-300">
-              Time Remaining
+              <script>document.write(lang("timeRemaining"))</script>
             </p>
           </div>
-          <div
+          <div dir="ltr"
             class="flex justify-center items-center dark:group-data-[timer=normal]:bg-blue-900/20 dark:group-data-[timer=warning]:bg-red-900/20 group-data-[timer=normal]:bg-blue-100 group-data-[timer=warning]:bg-red-50 py-4 rounded-lg font-mono dark:group-data-[timer=normal]:text-blue-400 dark:group-data-[timer=warning]:text-red-400 group-data-[timer=normal]:text-blue-600 group-data-[timer=warning]:text-red-600 text-4xl text-center transition-colors group-data-[timer=warning]:animate-pulse duration-300">
             <span id="minutes-2"></span>
             <span>:</span>
@@ -80,14 +83,14 @@
         <div class="bg-white dark:bg-gray-800 shadow-lg p-6 rounded-xl transition-colors duration-300">
           <div class="flex justify-between items-center mb-4 pb-2.5 border-b border-b-gray-300">
             <h3 class="text-gray-800 dark:text-white transition-colors duration-300">
-              Questions: 10
+              <script>document.write(lang("questions"))</script>
             </h3>
             <button onClick="onCloseMarkedQuestions()"
               class="md:hidden bg-linear-to-r from-blue-500 hover:from-blue-600 to-indigo-600 hover:to-indigo-700 rounded-full w-7 h-7 text-white hover:scale-[103%] transition duration-300 cursor-pointer">
               &Cross;
             </button>
           </div>
-          <div id="questions-numbers-container" class="gap-2 grid grid-cols-5">
+          <div dir="ltr" id="questions-numbers-container" class="gap-2 grid grid-cols-5">
 
           </div>
         </div>
@@ -95,7 +98,9 @@
         <button id="submit-exam-1"
           class="hidden md:flex justify-center items-center gap-3 bg-linear-to-r from-green-500 hover:from-green-600 to-emerald-600 hover:to-emerald-700 shadow-lg hover:shadow-xl py-4 rounded-xl w-full text-white transition duration-300 cursor-pointer">
           <span><i class="fa-solid fa-paper-plane"></i></span>
-          <span>Submit exam</span>
+          <span>
+            <script>document.write(lang("submit"))</script>
+          </span>
         </button>
       </aside>
       <!-- End aside -->
@@ -111,10 +116,12 @@
                 class="group-data-[timer=normal]:text-blue-500 group-data-[timer=warning]:text-red-500 group-data-[timer=warning]:animate-pulse"><i
                   class="fa-regular fa-clock fa-lg"></i></span>
               <p class="text-gray-600 dark:text-white">
-                Time Remaining:
+                <script>document.write(lang("timeRemaining"))</script>:
+              <span dir="ltr">
                 <span id="minutes-1"></span>
                 <span>:</span>
                 <span id="seconds-1"></span>
+              </span>
               </p>
             </div>
             <div class="flex items-center space-x-2.5">
@@ -143,7 +150,8 @@
           class="bg-white dark:bg-gray-800 shadow-lg p-4 sm:p-6 lg:p-8 rounded-xl transition-colors duration-300">
           <header class="flex justify-between items-center">
             <p class="text-gray-500 dark:text-gray-400 text-xs transition-colors duration-300">
-              Question <span id="question-number">1</span> of 10
+              <script>document.write(lang("question"))</script> <span id="question-number">1</span>
+              <script>document.write(lang("of"))</script> 10
             </p>
             <button id="mark-btn-1" data-marked="true"
               class="group flex justify-center items-center bg-gray-100 data-[marked=true]:bg-yellow-500 dark:bg-gray-700 rounded-lg w-10 h-10 text-gray-600 dark:text-gray-400 hover:scale-[103%] transition-all duration-300 cursor-pointer">
@@ -160,11 +168,13 @@
         </div>
         <!-- Start Section-Footer -->
         <footer class="bg-white dark:bg-gray-800 shadow-lg p-4 sm:p-6 lg:p-8 rounded-xl transition-colors duration-300">
-          <div class="flex justify-center items-center gap-2.5 mb-4 md:mb-0">
+          <div dir="ltr" class="flex justify-center items-center gap-2.5 mb-4 md:mb-0">
             <button id="prev-btn"
               class="flex justify-center items-center gap-2 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 disabled:opacity-50 px-6 py-3 rounded-lg text-gray-800 dark:text-white hover:scale-[103%] transition-all duration-300 cursor-pointer disabled:cursor-not-allowed disabled:pointer-events-none">
               <span><i class="fa-caret-left fa-xl fa-solid"></i></span>
-              <span>Previous</span>
+              <span>
+                <script>document.write(lang("previous"))</script>
+              </span>
             </button>
             <button id="mark-btn-2" data-marked="true"
               class="flex justify-center items-center gap-2 bg-gray-200 data-[marked=true]:bg-yellow-500 data-[marked=true]:hover:bg-yellow-600 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 disabled:opacity-50 px-6 py-3 rounded-lg text-gray-800 data-[marked=true]:text-white dark:text-white hover:scale-[103%] transition-all duration-300 cursor-pointer disabled:cursor-not-allowed">
@@ -172,14 +182,18 @@
             </button>
             <button id="next-btn"
               class="flex justify-center items-center gap-2 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 bg-linear-to-r hover:bg-linear-to-r from-blue-500 hover:from-blue-600 to-indigo-600 hover:to-indigo-700 disabled:opacity-50 px-6 py-3 rounded-lg text-white hover:scale-[103%] transition duration-300 cursor-pointer disabled:cursor-not-allowed disabled:pointer-events-none">
-              <span>Next</span>
+              <span>
+                <script>document.write(lang("next"))</script>
+              </span>
               <span><i class="fa-caret-right fa-xl fa-solid"></i></span>
             </button>
           </div>
           <button id="submit-exam-2"
             class="md:hidden bg-linear-to-r from-green-500 hover:from-green-600 to-emerald-600 hover:to-emerald-700 shadow-lg hover:shadow-xl py-4 rounded-xl w-full text-white transition duration-300 cursor-pointer">
             <span><i class="fa-solid fa-paper-plane"></i></span>
-            <span>Submit exam</span>
+            <span>
+              <script>document.write(lang("submit"))</script>
+            </span>
           </button>
         </footer>
         <!-- Start End-Footer -->

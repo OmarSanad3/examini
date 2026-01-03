@@ -6,6 +6,10 @@ export const Header = (fullName, email, imageUrl) => {
 
   const isExamInProgress = localStorage.getItem("exam-status") === "in-progress";
 
+  const appLang = localStorage.getItem("app-lang");
+
+  const otherLang = appLang === "ar" ? "en" : "ar";
+
   return `
     <header>
       <div
@@ -31,8 +35,9 @@ export const Header = (fullName, email, imageUrl) => {
             </span>
           </button>
           <button
+            onclick="changeLanguage('${otherLang}')"
             class="bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 p-2 rounded-lg text-gray-800 dark:text-white text-base hover:scale-110 transition-all duration-300 cursor-pointer">
-            <i class="fa-solid fa-globe"></i> AR
+            <i class="fa-solid fa-globe"></i> ${appLang.toUpperCase()}
           </button>
           <button
             onclick="onSignOut()"

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8" />
@@ -19,6 +19,9 @@
 
   <!-- Theme Fetching -->
   <script src="../js/utils/theme-toggle.js"></script>
+
+  <!-- Localization -->
+  <script src="../js/utils/localization.js"></script>
 
   <!-- Guard -->
   <script>
@@ -47,20 +50,20 @@
 
   <main id="main-container" data-exam-status="not-started" class="group mx-5 md:mx-42 px-4 py-12">
     <div class="mb-12">
-      <h1 id="welcome-user-first-name" class="mb-4 text-[#1E2939] dark:text-white text-2xl text-center">Welcome bla</h1>
-      <p class="text-[#4A5565] text-[16px] dark:text-[#99A1AF] text-center">Exam Information</p>
+      <h1 id="welcome-user-first-name" class="mb-4 text-[#1E2939] dark:text-white text-2xl text-center"><script>document.write(lang("welcome"))</script></h1>
+      <p class="text-[#4A5565] text-[16px] dark:text-[#99A1AF] text-center"><script>document.write(lang("examInfo"))</script></p>
     </div>
     <div
       class="hidden group-data-[exam-status=finished]:flex flex-col justify-center items-center gap-4 bg-linear-to-r from-green-500 to-emerald-600 shadow-2xl mb-8 p-8 rounded-2xl">
       <div class="flex justify-center items-center text-white text-7xl">
         <i class="fa-regular fa-circle-check"></i>
       </div>
-      <p class="text-white text-base">Exam Completed!</p>
+      <p class="text-white text-base"><script>document.write(lang("examCompleted"))</script></p>
       <h2 id="score" class="text-white text-2xl">Your score: 80%</h2>
       <div class="flex justify-between">
         <a href="./results.html"
           class="bg-white shadow-lg hover:shadow-xl px-4 sm:px-6 py-2 sm:py-3 rounded-lg text-green-600 text-base hover:scale-105 transition-all duration-300 cursor-pointer">
-          View results
+          <script>document.write(lang("viewResults"))</script>
         </a>
       </div>
     </div>
@@ -73,9 +76,8 @@
             <i class="text-blue-500 text-4xl fa-solid fa-globe"></i>
           </div>
           <div class="flex flex-col gap-2">
-            <h2 id="exam-title" class="text-base">General Knowledge Exam</h2>
-            <p id="exam-description" class="font-thin text-[#DBEAFE] text-sm">Test your knowledge with 10 multiple
-              choice questions</p>
+            <h2 id="exam-title" class="text-base"><script>document.write(lang("examTitle"))</script></h2>
+            <p id="exam-description" class="font-thin text-[#DBEAFE] text-sm"><script>document.write(lang("examDescription"))</script></p>
           </div>
         </div>
       </div>
@@ -87,8 +89,8 @@
               <i class="text-white text-2xl fa-regular fa-clock"></i>
             </div>
             <div class="flex flex-col gap-1">
-              <p class="text-[#4A5565] dark:text-[#99A1AF] text-sm">Duration: 20 minutes</p>
-              <p class="text-[#1E2939] dark:text-white text-base">20 min</p>
+              <p class="text-[#4A5565] dark:text-[#99A1AF] text-sm"><script>document.write(lang("duration"))</script></p>
+              <p class="text-[#1E2939] dark:text-white text-base">20 <script>document.write(lang("minutes"))</script></p>
             </div>
           </div>
           <div
@@ -97,7 +99,7 @@
               <i class="text-white text-2xl fa-solid fa-clipboard-question"></i>
             </div>
             <div class="flex flex-col gap-1">
-              <p class="text-[#4A5565] dark:text-[#99A1AF] text-sm">Questions: 10</p>
+              <p class="text-[#4A5565] dark:text-[#99A1AF] text-sm"><script>document.write(lang("questions"))</script></p>
               <p class="text-[#1E2939] dark:text-white text-base">10</p>
             </div>
           </div>
@@ -107,26 +109,26 @@
               <i class="text-white text-2xl fa-solid fa-award"></i>
             </div>
             <div class="flex flex-col gap-1">
-              <p class="text-[#4A5565] dark:text-[#99A1AF] text-sm">Passing Score: 70%</p>
+              <p class="text-[#4A5565] dark:text-[#99A1AF] text-sm"><script>document.write(lang("passingScore"))</script></p>
               <p class="text-[#1E2939] dark:text-white text-base">70%</p>
             </div>
           </div>
         </div>
         <div class="bg-gray-50 dark:bg-gray-700 mb-6 p-4 rounded-xl transition-colors duration-300">
-          <p class="mb-1 text-gray-600 dark:text-gray-400">Status</p>
+          <p class="mb-1 text-gray-600 dark:text-gray-400"><script>document.write(lang("status"))</script></p>
           <div class="flex items-center gap-2">
             <div
               class="group-data-[exam-status=finished]:bg-green-400 group-data-[exam-status=in-progress]:bg-amber-400 group-data-[exam-status=not-started]:bg-gray-400 rounded-full w-3 h-3">
             </div>
-            <p class="hidden group-data-[exam-status=not-started]:block text-gray-800 dark:text-white">Not Started</p>
-            <p class="hidden group-data-[exam-status=in-progress]:block text-gray-800 dark:text-white">In Progress</p>
-            <p class="hidden group-data-[exam-status=finished]:block text-gray-800 dark:text-white">Finished</p>
+            <p class="hidden group-data-[exam-status=not-started]:block text-gray-800 dark:text-white"><script>document.write(lang("notStarted"))</script></p>
+            <p class="hidden group-data-[exam-status=in-progress]:block text-gray-800 dark:text-white"><script>document.write(lang("inProgress"))</script></p>
+            <p class="hidden group-data-[exam-status=finished]:block text-gray-800 dark:text-white"><script>document.write(lang("completed"))</script></p>
           </div>
         </div>
         <button id="start-exam-now-btn"
           class="group-data-[exam-status=finished]:hidden flex justify-center items-center gap-3 bg-linear-to-r from-blue-500 hover:from-blue-600 to-indigo-600 hover:to-indigo-700 shadow-lg hover:shadow-xl py-4 rounded-xl w-full text-white hover:scale-101 transition-all duration-300 cursor-pointer">
           <i class="fa-regular fa-circle-play"></i>
-          Start Now
+          <script>document.write(lang("startExam"))</script>
         </button>
       </div>
     </div>
