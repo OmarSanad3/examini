@@ -1,4 +1,9 @@
 export const Header = (fullName, email, imageUrl) => {
+  window.onSignOut = () => {
+    localStorage.removeItem("curr-user");
+    location.href = "./sign-in.html";
+  };
+
   return `
     <header>
       <div
@@ -27,6 +32,7 @@ export const Header = (fullName, email, imageUrl) => {
             <i class="fa-solid fa-globe"></i> AR
           </button>
           <button
+            onclick="onSignOut()"
             class="bg-red-100 hover:bg-red-200 dark:bg-red-900 dark:hover:bg-red-800 p-2 rounded-lg text-red-600 dark:text-red-300 text-base hover:scale-110 transition-all duration-300 cursor-pointer">
             <i class="fa-arrow-right-from-bracket fa-solid"></i>
           </button>
