@@ -92,6 +92,43 @@
       <i class="fa-solid fa-house"></i>
       <script>document.write(lang("backToHome"))</script>
     </a>
+    <!-- Start Certificat Section -->
+    <section
+      data-certificate=""
+      id="certificate"
+      class="hidden z-50 fixed inset-0 data-[certificate=true]:flex justify-center items-center bg-black bg-opacity-50 p-4"
+    >
+      <div
+        class="flex flex-col justify-center items-center space-y-5 bg-gray-200 shadow-2xl p-6 sm:p-8 border-2 border-amber-500 rounded-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto"
+      >
+        <button
+          class="self-end bg-gray-800 hover:bg-gray-700 px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg text-white text-sm sm:text-base transition-all duration-300 cursor-pointer"
+        >
+          Close
+        </button>
+        <span class="text-amber-500">
+          <i class="fa-solid fa-award fa-4x"></i>
+        </span>
+        <h3 class="text-gray-800 text-2xl sm:text-4xl">
+          Certificate of Completion
+        </h3>
+        <div
+          class="flex flex-col justify-center items-center space-y-4 text-base sm:text-xl"
+        >
+          <p>This certifies that</p>
+          <p class="text-xl sm:text-3xl">USER NAME</p>
+          <p>has successfully completed the</p>
+          <p class="text-lg sm:text-2xl">General Knowledge Exam</p>
+          <p>with a score of <span>(PERCENTAGE)</span>%</p>
+        </div>
+        <footer
+          class="self-stretch pt-5 border-gray-300 border-t-2 text-center"
+        >
+          <p class="text-gray-600 text-sm sm:text-base">January 3, 2026</p>
+        </footer>
+      </div>
+    </section>
+    <!-- End Certificat Section -->
   </main>
 
   <script src="../js/results.js" type="module"></script>
