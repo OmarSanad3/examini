@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Icons -->
+    <link href="../css/all.min.css" rel="stylesheet" />
 
-  <!-- Icons -->
-  <link href="../css/all.min.css" rel="stylesheet" />
+    <!-- Tailwind File -->
+    <link href="../css/output.css" rel="stylesheet" />
 
-  <!-- Tailwind File -->
-  <link href="../css/output.css" rel="stylesheet" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+    <!-- Page Title -->
+    <title>Examini - Sign In</title>
 
-  <!-- Page Title -->
-  <title>Examini - Sign In</title>
+    <!-- Theme Fetching -->
+    <script src="../js/utils/theme-toggle.js"></script>
 
   <!-- Theme Fetching -->
   <script src="../js/utils/theme-toggle.js"></script>
@@ -35,9 +37,6 @@
       if (event.persisted) {
         window.location.reload();
       }
-    });
-  </script>
-</head>
 
 <body>
   <main>
@@ -69,18 +68,42 @@
             <script>document.write(lang("password"))</script>
             <div class="relative">
               <input
-                class="bg-white dark:bg-gray-700 px-4 py-3 border border-gray-300 focus:border-transparent dark:border-gray-600 rounded-lg outline-0 focus:ring-2 focus:ring-blue-500 w-full text-gray-900 dark:text-white transition-all duration-300 focus:caret-blue-500 focus:dark:caret-white"
-                type="password" name="password" id="password" />
-              <span
-                class="top-1/2 right-0 absolute hover:text-blue-700 transition-colors -translate-1/2 duration-300 cursor-pointer">
-                <i class="fa-solid fa-eye-slash"></i>
-              </span>
-            </div>
-            <p
-              class="hidden bg-red-50/50 p-2 rounded-md max-w-full font-medium text-red-500 dark:text-red-900 text-sm transition-colors duration-300 password">
-              test test test test test test tes
-            </p>
-          </label>
+                class="bg-white dark:bg-gray-700 px-4 py-3 border border-gray-300 focus:border-transparent dark:border-gray-600 rounded-lg outline-0 focus:ring-2 focus:ring-blue-500 text-gray-900 dark:text-white transition-all duration-300 focus:caret-blue-500 focus:dark:caret-white"
+                type="email"
+                name="email"
+                id="email"
+              />
+              <p
+                class="hidden bg-red-50/50 p-2 rounded-md max-w-full font-medium text-red-500 dark:text-red-900 text-sm transition-colors duration-300 email"
+              >
+                test test test test test test tes
+              </p>
+            </label>
+            <label
+              class="flex flex-col gap-2 text-gray-700 dark:text-gray-300 transition-colors duration-300"
+              for="password"
+            >
+              Password
+              <div class="relative">
+                <input
+                  class="bg-white dark:bg-gray-700 px-4 py-3 border border-gray-300 focus:border-transparent dark:border-gray-600 rounded-lg outline-0 focus:ring-2 focus:ring-blue-500 w-full text-gray-900 dark:text-white transition-all duration-300 focus:caret-blue-500 focus:dark:caret-white"
+                  type="password"
+                  name="password"
+                  id="password"
+                />
+                <span
+                  id="toggle-password"
+                  class="top-1/2 right-0 absolute hover:text-blue-700 transition-colors -translate-1/2 duration-300 cursor-pointer"
+                >
+                  <i class="fa-solid fa-eye-slash"></i>
+                </span>
+              </div>
+              <p
+                class="hidden bg-red-50/50 p-2 rounded-md max-w-full font-medium text-red-500 dark:text-red-900 text-sm transition-colors duration-300 password"
+              >
+                test test test test test test tes
+              </p>
+            </label>
 
           <button id="submit-btn"
             class="bg-linear-to-r from-blue-500 hover:from-blue-600 to-indigo-600 hover:to-indigo-700 py-3 focus:border-transparent rounded-lg outline-0 focus:ring-2 focus:ring-blue-600 text-white transition duration-300 cursor-pointer">
@@ -94,16 +117,16 @@
               href="../"><script>document.write(lang("signUp"))</script></a>
           </p>
         </div>
-      </div>
-    </section>
-  </main>
-  <!-- Sweetalert Library -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"
-    integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <!-- JS File -->
-  <script src="../js/auth-sign-in.js"></script>
-
-</body>
-
+      </section>
+    </main>
+    <!-- Sweetalert Library -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"
+      integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- JS File -->
+    <script src="../js/auth-sign-in.js"></script>
+  </body>
 </html>

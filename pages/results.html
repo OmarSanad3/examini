@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Icons -->
+    <link href="../css/all.min.css" rel="stylesheet" />
 
-  <!-- Icons -->
-  <link href="../css/all.min.css" rel="stylesheet" />
+    <!-- Tailwind File -->
+    <link href="../css/output.css" rel="stylesheet" />
 
-  <!-- Tailwind File -->
-  <link href="../css/output.css" rel="stylesheet" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+    <!-- Page Title -->
+    <title>Examini - Results</title>
 
-  <!-- Page Title -->
-  <title>Examini - Results</title>
+    <!-- Theme Fetching -->
+    <script src="../js/utils/theme-toggle.js"></script>
 
   <!-- Theme Fetching -->
   <script src="../js/utils/theme-toggle.js"></script>
@@ -42,19 +44,29 @@
       if (event.persisted) {
         window.location.reload();
       }
-    });
-  </script>
-</head>
 
-<body
-  class="bg-linear-to-br from-gray-50 dark:from-gray-900 to-blue-50 dark:to-gray-800 h-full min-h-screen transition-colors duration-300">
-  <!-- Start Header -->
-
-  <script src="../js/utils/header.js" type="module"></script>
-
-  <!-- End Header -->
+      const examStatus = localStorage.getItem("exam-status");
+      if (examStatus !== "finished") {
+        console.error(`You haven't finished the exam yet. ❗❗❗`);
+        location.href = "./home.html";
+      }
 
 
+      window.addEventListener("pageshow", function (event) {
+        if (event.persisted) {
+          window.location.reload();
+        }
+      });
+    </script>
+  </head>
+  <body
+    class="bg-linear-to-br from-gray-50 dark:from-gray-900 to-blue-50 dark:to-gray-800 h-full min-h-screen transition-colors duration-300"
+  >
+    <!-- Start Header -->
+
+    <script src="../js/utils/header.js" type="module"></script>
+
+    <!-- End Header -->
   <main class="mx-5 md:mx-42 px-4 py-12">
     <div id="results-container" data-status="fail"
       class="group flex flex-col justify-center items-center gap-4 bg-linear-to-r data-[status=fail]:from-red-500 data-[status=success]:from-green-500 data-[status=fail]:to-pink-600 data-[status=success]:to-emerald-600 shadow-2xl mb-8 p-8 rounded-2xl">
@@ -92,9 +104,50 @@
       <i class="fa-solid fa-house"></i>
       <script>document.write(lang("backToHome"))</script>
     </a>
+    
+    <!-- Start Certificat Section -->
+    <section
+      data-certificate="false"
+      id="certificate"
+      class="hidden z-50 fixed inset-0 data-[certificate=true]:flex justify-center items-center bg-black bg-opacity-50 p-4"
+    >
+      <div
+        class="flex flex-col justify-center items-center space-y-5 bg-gray-200 shadow-2xl p-6 sm:p-8 border-2 border-amber-500 rounded-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto"
+      >
+        <button
+          class="self-end bg-gray-800 hover:bg-gray-700 px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg text-white text-sm sm:text-base transition-all duration-300 cursor-pointer"
+        >
+          Close
+        </button>
+        <span class="text-amber-500">
+          <i class="fa-solid fa-award fa-4x"></i>
+        </span>
+        <h3 class="text-gray-800 text-2xl sm:text-4xl">
+          Certificate of Completion
+        </h3>
+        <div
+          class="flex flex-col justify-center items-center space-y-4 text-base sm:text-xl"
+        >
+          <p>This certifies that</p>
+          <p class="text-xl sm:text-3xl">USER NAME</p>
+          <p>has successfully completed the</p>
+          <p class="text-lg sm:text-2xl">General Knowledge Exam</p>
+          <p>with a score of <span>(PERCENTAGE)</span>%</p>
+        </div>
+        <footer
+          class="self-stretch pt-5 border-gray-300 border-t-2 text-center"
+        >
+          <p class="text-gray-600 text-sm sm:text-base">January 3, 2026</p>
+        </footer>
+      </div>
+    </section>
+    <!-- End Certificat Section -->
+    
   </main>
 
   <script src="../js/results.js" type="module"></script>
 </body>
 
+    <script src="../js/results.js" type="module"></script>
+  </body>
 </html>
