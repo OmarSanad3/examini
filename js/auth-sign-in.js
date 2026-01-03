@@ -99,7 +99,7 @@ signInForm.addEventListener("submit", (e) => {
 
         localStorage.setItem("exam-info", null);
         localStorage.setItem("exam-status", "not-started");
-        localStorage.setItem("currUser", JSON.stringify(el));
+        localStorage.setItem("curr-user", JSON.stringify(el));
       }
     });
 

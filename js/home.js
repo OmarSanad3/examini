@@ -4,7 +4,7 @@ const startExamNowBtnEle = document.getElementById("start-exam-now-btn");
 const scoreEle = document.getElementById("score");
 
 /* -------------------- Render firstName, lastName, email -------------------- */
-const { firstName } = JSON.parse(localStorage.getItem("currUser"));
+const { firstName } = JSON.parse(localStorage.getItem("curr-user"));
 
 welcomeUserFirstName.textContent = "Welcome " + firstName;
 /* -------------------- Conditional Rendering according to exam-status in home page -------------------- */

@@ -1,7 +1,7 @@
 import { Header } from "../components/Header.js";
 
 const { firstName, lastName, email, image } = JSON.parse(
-  localStorage.getItem("currUser")
+  localStorage.getItem("curr-user")
 );
 const headerHTML = Header(firstName + " " + lastName, email, image);
 
